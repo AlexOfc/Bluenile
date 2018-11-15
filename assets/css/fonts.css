@@ -1,0 +1,21 @@
+
+
+
+@font-face {
+    font-family: 'VerlagBook';
+    src: url('../fonts/verlag-book.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'VerlagBook';
+    src: url('../fonts/verlag-bold.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+
+}
