@@ -66,7 +66,9 @@ canvas {
     -o-user-select: none;
     user-select: none;
 }
-
+.hidden {
+    display: none!important;
+}
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 0.5rem;
@@ -241,4 +243,376 @@ h6, .h6 {
     transition-timing-function: ease-in-out;
     transition-duration: 0.2s;
     transition-property: left,width;
+}
+.mega-drop-down {
+    margin-right: 1px;
+    margin-left: 1px;
+    position: absolute;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition-timing-function: ease-out;
+    transition-duration: .5s;
+    transition-property: max-height;
+}
+.mega-drop-down.active {
+    max-height: 450px;
+    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.2)
+}
+.mega-content {
+    display: block;
+    height: auto;
+    bottom: 0;
+    border-right: 1px solid #F6F6F6;
+}
+.menu-table {
+    display: table;
+    padding: 12px 24px 0;
+}
+.diamonds .first.column .headline {
+    padding-bottom: 5px;
+}
+.mega-drop-down .column {
+    display: table-cell;
+    text-align: left;
+    text-transform: capitalize;
+    vertical-align: top;
+    padding-right: 36px;
+    min-width: 176px;
+}
+.mega-drop-down .mega-menu-astor-section {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.mega-drop-down .mega-menu-astor-section a img {
+    width: 200px;
+    height: 130px;
+    display: block;
+}
+.mega-drop-down .mega-menu-astor-section a .text {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 12px;
+    position: absolute;
+    top: 55px;
+    left: 5px;
+    text-align: center;
+    text-transform: none;
+    
+}
+.mega-drop-down .mega-menu-astor-section a .text p {
+    margin: 0
+}
+.mega-drop-down .mega-menu-astor-section a .text p+p+p {
+    margin-top: 20px;
+    text-decoration: underline;
+}
+.cta {
+    font-family: VerlagBold,Arial,Verdana,sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.mega-drop-down ul li a.headline {
+    font-weight: bold;
+    display: inline-block; 
+    text-transform: uppercase;
+    line-height: 16px;
+    padding-top: 10px;
+}
+.mega-drop-down ul li a:not(.headline) {
+    line-height: 14px;
+    display: inline-block;
+    padding-bottom: 8px;
+    text-transform: capitalize
+}
+.mega-drop-down ul li a {
+    font-size: 14px;
+    color: #100E31;
+    letter-spacing: 0.5px;
+}
+.mega-drop-down ul {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    text-align: left;
+    -webkit-padding-start: 0;
+    padding: 0;
+}
+.mega-drop-down ul li.two-column-component {
+    padding-top: 0;
+}
+.mega-drop-down ul li.two-column-component>ul>li {
+    max-height: 21px
+}
+.mega-drop-down ul li.two-column-component>ul>li .sprite-holder {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 46px;
+    min-width: 20px;
+}
+.mega-drop-down ul li.two-column-component>ul>li .nav-link-text {
+    text-transform: capitalize;
+    vertical-align: middle;
+    display: table-cell;
+    padding-left: 8px;
+    white-space: nowrap;
+}
+.mega-drop-down ul li a {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding-bottom: 6px;
+}
+.mega-drop-down ul li.two-column-component ul li a:not(.headline) {
+    max-height: 21px;
+    line-height: 14px;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.navigation-sprite {
+    background-repeat: no-repeat;
+    background-image: url('https://bnsec.bluenile.com/bnsecure/static/sprites/navigation-sprites-a5ef6a7e.svg');
+    background-size: 2.32em 1.96em;
+}
+
+#navigation-menu .diamonds .sprite-holder {
+    width: 19px;
+    height: 24px
+}
+
+#navigation-menu .diamonds .navigation-sprite {
+    font-size: 80px
+}
+
+#navigation-menu .engagement .navigation-sprite {
+    font-size: 74px
+}
+
+#navigation-menu .gifts .navigation-sprite {
+    font-size: 62px
+}
+
+#navigation-menu .single-date-wk45 {
+    color: red
+}
+.navigation-sprite.nav-3Stone {
+    background-position: -.74em -.4em;
+    width: .62em;
+    height: .26em
+}
+
+.navigation-sprite.nav-apr {
+    background-position: -1.28em -1.32em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-asscher {
+    background-position: -2.1em -.4221em;
+    width: .2104em;
+    height: .2107em
+}
+
+.navigation-sprite.nav-aug {
+    background-position: 0 -1.32em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-colorSidestone {
+    background-position: 0 -.8em;
+    width: .62em;
+    height: .26em
+}
+
+.navigation-sprite.nav-cushion {
+    background-position: -1.28em -1.64em;
+    width: .2251em;
+    height: .2249em
+}
+
+.navigation-sprite.nav-dec {
+    background-position: -.96em -1.64em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-designer {
+    background-position: -.62em -1.06em;
+    width: .62em;
+    height: .26em
+}
+
+.navigation-sprite.nav-emerald {
+    background-position: -1.24em -1.06em;
+    width: .19em;
+    height: .2457em
+}
+
+.navigation-sprite.nav-feb {
+    background-position: -1.48em -.52em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-gemstone {
+    background-position: 0 -.4em;
+    width: .74em;
+    height: .4em
+}
+
+.navigation-sprite.nav-halo {
+    background-position: -1.48em 0;
+    width: .62em;
+    height: .26em
+}
+
+.navigation-sprite.nav-heart {
+    background-position: -1.5051em -1.64em;
+    width: .2122em;
+    height: .2101em
+}
+
+.navigation-sprite.nav-jan {
+    background-position: -.32em -1.32em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-jul {
+    background-position: -.64em -1.32em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-jun {
+    background-position: -.96em -1.32em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-mar {
+    background-position: -1.48em -.84em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-marquise {
+    background-position: -1.8em -.52em;
+    width: .17em;
+    height: .2636em
+}
+
+.navigation-sprite.nav-may {
+    background-position: 0 -1.64em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-nov {
+    background-position: -.32em -1.64em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-oct {
+    background-position: -.64em -1.64em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-oval {
+    background-position: -1.8em -.84em;
+    width: .18em;
+    height: .2482em
+}
+
+.navigation-sprite.nav-pear {
+    background-position: -1.24em -.8em;
+    width: .16em;
+    height: .2477em
+}
+
+.navigation-sprite.nav-princess {
+    background-position: -2.1em -.6328em;
+    width: .21em;
+    height: .21em
+}
+
+.navigation-sprite.nav-radiant {
+    background-position: -2.1em -.2114em;
+    width: .2104em;
+    height: .2107em
+}
+
+.navigation-sprite.nav-rose {
+    background-position: -.74em 0;
+    width: .74em;
+    height: .4em
+}
+
+.navigation-sprite.nav-round {
+    background-position: -2.1em 0;
+    width: .2114em;
+    height: .2114em
+}
+
+.navigation-sprite.nav-sep {
+    background-position: -1.6em -1.32em;
+    width: .32em;
+    height: .32em
+}
+
+.navigation-sprite.nav-sidestone {
+    background-position: -.62em -.8em;
+    width: .62em;
+    height: .26em
+}
+
+.navigation-sprite.nav-solitaire {
+    background-position: -1.48em -.26em;
+    width: .62em;
+    height: .26em
+}
+
+.navigation-sprite.nav-unique {
+    background-position: 0 0;
+    width: .74em;
+    height: .4em
+}
+
+.navigation-sprite.nav-vintage {
+    background-position: 0 -1.06em;
+    width: .62em;
+    height: .26em
+}
+.mega-drop-down a.view-all-link {
+    color: #100E31;    
+    padding: 0 24px 20px;
+    text-transform: capitalize;
+    display: block;
+    font-size: 14px;
+    font-family: "VerlagBold",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 28px;
+}
+.view-all {
+    font-size: 11px
+}
+.segment .mega-drop-down .view-all-link:after {
+    content: "\f105";
+    font-family: "FontAwesome";
+    font-size: 14px;
+    vertical-align: bottom;
+}
+.segment .mega-drop-down li {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    line-height: 19px
+}
+.segment .mega-drop-down li {
+    padding-right: 1px;
 }
