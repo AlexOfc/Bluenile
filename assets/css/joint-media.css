@@ -1,238 +1,33 @@
 @media screen and (max-width: 1200px){
-    .dz-info-upload {
-        font-size: 12px;
-    }
+    
 }
 @media screen and (max-width: 992px)
 {
-    .latest-impressions, .content-categories {
-        margin-bottom: 30px
-    }
-    .available-packages-header-search form input {
-        min-width: 130px;
-        width: 130px;
-        padding: 5px 25px 5px 15px
-    }
-    .impress-chart {
-        max-height: 400px
-    }
-    .page-content {
-        padding: 10px 0
-    }
-    .profile {
-        padding-top: 20px
-    }
-    .adv-item {
-        margin-bottom: 40px;
-    }
-    .tables-container {
-        padding-bottom: 50px
-    }
-    #campaign-form .dz-preview .dz-image {
-        width: 25%;
-    }
-    #campaign-form .dz-preview .dz-details {
-        width: 75%;
-    }
-    .budget-input, .max-cpm-input {
-        padding: 0
-    }
-    #campaign-form .dz-preview .dz-error-message {
-        font-size: 10px;
-    }
-    .available-package-list .available-item.continue-item {
-        width: 50%;
-    }
+    
 }
 @media screen and (min-width:769px) and (max-width: 992px){
-    .available-packages-table.joint-table tbody tr td:first-of-type, .available-packages-table.joint-table table thead tr th:first-of-type {
-        display: none
-    }
+    
 }
 @media screen and (max-width: 768px)
 {
-    .available-packages-container {
-        margin-bottom: 30px
-    }
-    .available-packages-container tbody {
-        max-height: 400px
-    }
-    .chart-data-container{
-        margin-bottom: 16px!important;
-    }
-    .widget-body-container {
-        padding: 0.85rem 1.4rem;       
-    }
-    .tables-container, .under-footer-container {
-        padding-bottom: 50px
-    }
-    .packages-container{
-        padding-bottom: 50px;
-        margin-top: 30px
-    }
-    .domains {
-        margin-bottom: 30px!important
-    }
-    .go-top {
-        right: 5px;
-    }
-
-    .no-padding-xs {
-        padding: 0!important
-    }
-    .campaign-block {
-        margin-top: 30px
-    }
+   
 }
 @media screen and (max-width: 576px){
-    .page-content {
-        padding-top: 10px
-    }
-    .container-fluid {
-        padding: 15px 15px 0;
-      }
     
-      .page-header, .page-header-2 {
-        padding: 20px 0;
-      }
-      nav.navbar .dropdown-menu {
-        right: 0;
-      }
-      nav.navbar .nav-item > a {
-        width: 40px;
-      }
-    
-      nav.navbar .nav-item a > span {
-        height: 10px;
-        width: 10px;
-      }
-    
-      
-      nav.navbar a#user {
-        margin: 0;
-      }
-    
-      nav.navbar .avatar {
-        width: 40px;
-        height: 40px;
-        margin: 0 auto;
-      }
-     
-      .navbar-brand {
-          margin-right: 0
-      }
-      .toggle_mnu {
-          display: block
-      }
-      header .nav-menu, header .nav-item {
-          display: none!important
-      }
-      #previews .dz-message {
-          font-size: 14px
-      }
-      .material-input {
-          margin-bottom: 60px
-      }
-      #previews {
-        padding: 30px 15px;
-      }
-    #campaign-form .dz-preview .dz-error-message {
-        position: relative;
-        float: none;
-        width: 100%;
-    }
-    #campaign-form .dz-preview {
-        flex-wrap: wrap;
-    }
-    #campaign-form .dz-message span {
-        font-size: 12px;
-    }
-    .submit-container button {
-        font-size: 16px;
-    }
 }
 @media screen and (max-width: 475px) {
-    .get-joint-container, .about-container{
-        font-size: 14px
-    }
-    .joint-table tbody tr:hover td:first-of-type {
-        opacity: 0;
-        visibility: hidden;
-    }
-    .overview-body {
-        margin-top: 0
-    }
-    .dz-cont {
-        float: left;
-     }
-    #campaign-form .dz-preview .dz-details .dz-filename, #campaign-form .dz-preview .dz-details .dz-size{
-        float: none;
-        text-align: left;
-    }
-    .available-package-list .available-item span.text span.stat {
-        font-size: 10px
-    }
-    .available-package-list .available-item.available-big span.text span.stat {
-        font-size: 13px
-    }
+    
 }
 @media screen and (max-width:400px)
 {
-    nav.navbar{
-        padding: 10px 5px;
-    }
-    .available-packages-header-search form {
-        margin-bottom: 10px;
-        float: left;
-    }
-    .packages-container .table-header {
-        margin-bottom: 10px
-    }
-    .title-stats {
-        font-size: 18px
-    }
-    .title-container h1 {
-        font-size: 22px
-    }
-    .adv-item {
-        margin-bottom: 15px
-    }
-    footer.main-footer p {
-        font-size: 10px
-    }
-    .title-container {
-        padding-top: 60px
-    }
-    #previews.filledpreview {
-        padding-bottom: 70px;
-    }
-    .available-package-list .available-item {
-        padding: 0 3px;
-    }
-    .available-package-list .available-item span.icon{
-        margin: 0 2px 0 0;
-    }
-    .available-package-list .available-big span.icon {
-        margin: 0 10px 0 0;
-
-    }
+    
 }
 @media screen and (max-width: 350px)
 {
-    .get-joint-container, .about-container {
-        margin-right: 10px
-    }
+ 
     
 }
 @media screen and (max-width:320px)
 {
-    .available-packages-header-search form input {
-        min-width: 100px;
-        width: 100px;
-        padding: 5px 20px 5px 10px
-    }
-    .available-packages-header-search form button{
-        right: 3px;
-        margin-top: -10px;
-    }
+   
 }
