@@ -9,7 +9,7 @@ body,html {
 body {
     font-family: "VerlagBook", Arial,Verdana,sans-serif;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.5;
     color: #100E31;
     background-color: #fff;
@@ -155,6 +155,14 @@ h6, .h6 {
     border:0;
     font-weight: 300;
     padding: 0;
+    cursor: pointer;
+}
+.actionbar-button img {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    left: -2px;
+    line-height: 0;
 }
 .actionbar-button:after {
     display: none;
@@ -166,4 +174,71 @@ h6, .h6 {
     position: relative;
     padding-left: 24px;
     padding-right: 24px;
+}
+.logo-block img {
+    width: 188px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.delivery-advantages {
+    padding: 8px;
+}
+.search-container {
+    font-weight: 300;
+    font-size: 16px
+}
+.search {
+    display: inline-block;
+}
+#basket {
+    display: inline-block;
+}
+#basket i {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    font-size: 24px;
+    padding: 5px 8px 5px 0;
+}
+.navigation-bar {
+    line-height: 19px;
+    display: table;
+    width: 100%;
+    position: relative;
+}
+.navigation-bar .segment {
+    display: table-cell;
+    position: relative;
+    font-family: "VerlagBook",Arial,Helvetica,sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #BDBDBD;
+    width: 5%;
+    vertical-align: bottom;
+    line-height: 19px;
+}
+.navigation-bar .segment > a {
+    display: block;
+    width: 100%;
+    padding: 10px 19px 9px 19px;
+    font-size: 16px;
+    letter-spacing: 0.76px;
+    border-bottom: solid 1px #95989A;
+}
+#navigation-menu {
+    display: block;
+    position: relative;
+}
+#navigation-menu .blue-bar {
+    position: absolute;
+    height: 5px;
+    background-color: #182852;
+    width: 0;
+    bottom: 0;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: left,width;
 }
