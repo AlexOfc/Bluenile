@@ -224,11 +224,12 @@ h6, .h6 {
 }
 .logo-block {
     padding-top: 16px;
-    padding-bottom: 8px;
+    padding-bottom: 16px;
     border-bottom: none;
     position: relative;
     padding-left: 24px;
     padding-right: 24px;
+    border-bottom: 1px solid #ababab
 }
 .logo-block img {
     width: 188px;
@@ -299,24 +300,13 @@ h6, .h6 {
 .navigation-bar .segment > a {
     display: block;
     width: 100%;
-    padding: 10px 19px 9px 19px;
+    padding: 10px 19px 6px 19px;
     font-size: 16px;
     letter-spacing: 0.76px;
-    border-bottom: solid 1px #95989A;
 }
 #navigation-menu {
     display: block;
     position: relative;
-}
-#navigation-menu .blue-bar {
-    position: absolute;
-    height: 5px;
-    background-color: #182852;
-    width: 0;
-    bottom: 0;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.2s;
-    transition-property: left,width;
 }
 .mega-drop-down {
     margin-right: 1px;
