@@ -784,13 +784,17 @@ h6, .h6 {
     margin-top: 30px;
    
 }
-.cut-filter .slider-wrapper .slider, .color-filter .slider-wrapper .slider, .orientation-filter .slider-wrapper .slider {
+.slider.less {
+    background: #d5d7d8;
+    margin-top: 15px;
+}
+.cut-filter .slider-wrapper .slider, .type-filter .slider-wrapper .slider, .orientation-filter .slider-wrapper .slider {
     background: #d5d7d8;
     margin-top: 15px
 }
-.cut-filter .filter-info, .color-filter .filter-info, .orientation-filter .filter-info {
- padding-top: 20px;
- padding-bottom: 0
+.cut-filter .filter-info, .type-filter .filter-info, .orientation-filter .filter-info, .no-pb {
+ padding-top: 20px!important;
+ padding-bottom: 0!important
 }
 .slider-wrapper .slider-inputs>input {
     width: 130px;
@@ -1245,4 +1249,10 @@ h6, .h6 {
     width: -webkit-calc(100% + 20px);
     width: calc(100% + 20px);
     margin-left: -10px;
+}
+.dropdown-selector {
+    margin-top: 27px;
+}
+.dropdown-selector:focus {
+    outline: none
 }

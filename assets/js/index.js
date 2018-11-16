@@ -1,12 +1,16 @@
 // Variables and data
 let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'China', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece']
 let selectElem = document.getElementById("shipping-country");
-let cutArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'];
-let colorArray = ['P', 'N', 'ANY', 'Undoped'];
+let dopantArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'];
+let typeArray = ['P', 'N', 'ANY', 'Undoped'];
 let orientationArray = ['<0001>', '<100>', '<110>', '<111>', 'ANY', 'N/A', '<510>', '<112>', '<113>', '<557>', '<111B>', '<111A>', '<1-102>', 'ST-cut', 'X-cut', 'Y-cut', 'Y-X-cut', 'Z-cut', 'AT-cut', '<11-20>', '<111-4°>', '<111-3°>']
 let shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire']
-
-let shapeData = [
+let diametersNames = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken']
+let gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality']
+let polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS']
+let thicknessNames = ['320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '280', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD']
+let diameterData = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken']
+/*let shapeData = [
     {
         name: 'Round',
         prefix: 'RD'
@@ -47,19 +51,23 @@ let shapeData = [
         name: 'Heart',
         prefix: 'HS'
     }
-]
+]*/
 //Executing functions
 $(document).ready(function () {
     makeSelect(country_list, selectElem);
     Menu(shapesNames);
-    CreateShapeFilter(shapeData);
+    //CreateShapeFilter(shapeData);
     CreateSlider($('.price-filter'), 0, 1000, '$');
     CreateSlider($('.carat-filter'), 0, 1000, '');
-    CreateTickedSliderWithoutOptions($('.cut-filter'), 0, cutArray);
-    CreateTickedSlider($('.color-filter'), 0, colorArray);
-    CreateTickedSliderWithoutOptions($('.orientation-filter'), 0, orientationArray);
+    CreateDropdownFilter($('.shape-filter'), diameterData);
+    CreateDropdownFilter($('.cut-filter'), dopantArray);
+    CreateTickedSlider($('.grade-filter'), 0, gradeArray);
+    CreateTickedSlider($('.polish-filter'), 0, polishArray);
+    CreateDropdownFilter($('.thickness-filter'), thicknessNames);
+    CreateTickedSlider($('.type-filter'), 0, typeArray);
+    CreateDropdownFilter($('.orientation-filter'), orientationArray);
 });
-function CreateShapeFilter(array) {
+/*function CreateShapeFilter(array) {
     $.each(array, function (i, val) {
         $('.shape-cont').append(`
             <div class="shape-filter-button">
@@ -79,7 +87,7 @@ function CreateShapeFilter(array) {
         </div>
         `);
     });
-}
+}*/
 function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.slider').slider({
         range: true,
@@ -96,32 +104,10 @@ function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.maxValue').val(txt + $(element).find('.slider').slider("values", 1));
     $(element).find('.range').text('(' + txt + $(element).find('.slider').slider("values", 0) + ' - ' + txt + $(element).find('.slider').slider("values", 1) + ')')
 }
-function CreateTickedSliderWithoutOptions(element, minimum, array) {
+function CreateDropdownFilter(element, array) {
 
-    $(element).find('.slider').slider({
-        range: true,
-        min: minimum,
-        max: array.length,
-        step: 1,
-        values: [minimum, array.length],
-        slide: function (event, ui) {
-            if (ui.values[1] - ui.values[0] < 1) {
-                return false;
-            }
-        }
-    });
-    for (i = 1; i < array.length; i++) {
-
-        $(element).find('.slider').append('<div class="option-mark"></div>')
-    }
-    $(element).find('.option-mark').each(function (i, e) {
-        $(e).css('left', (100 / Number($(element).find('.option-mark').length + 1)) * Number(i + 1) + '%')
-    })
-
-    $(element).find('.slider-value').each(function (i, el) {
-        if ($(el).attr('data-count') < $(element).find('.slider').slider("values", 0) || $(el).attr('data-count') >= $(element).find('.slider').slider("values", 1)) {
-            $(el).addClass('unselected')
-        }
+    $.each(array, function (i, e) {
+        $(element).find('.dropdown-selector').append('<option value="'+ e + '">' + e + '</div>');
     });
 
 }
