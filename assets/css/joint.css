@@ -1357,3 +1357,21 @@ h6, .h6 {
 .toggle-button-space.toggled .toggle-button-background .toggle-button-switch {
     left: 22px;
 }
+footer {
+    margin-top: 50px
+}
+.running {
+    text-align: center;
+    font-size: 14px
+}
+.running a {
+    color:#447099;
+    text-decoration: underline
+}
+.running a:hover {
+    text-decoration: none
+}
+.AuthorizeNetSeal a {
+    display: block;
+    text-align: center
+}

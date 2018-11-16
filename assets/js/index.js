@@ -300,7 +300,11 @@ function CreateSlider(element, minimum, maximum, txt) {
         slide: function (event, ui) {
             $(element).find('.minValue').val(txt + ui.values[0]);
             $(element).find('.maxValue').val(txt + ui.values[1]);
-            $(element).find('.range').text('(' + txt + ui.values[0] + ' - ' + txt + ui.values[1] + ')')
+            $(element).find('.range').text('(' + txt + ui.values[0] + ' - ' + txt + ui.values[1] + ')');
+            if ($(element).hasClass('filter-toggling')) {
+                $(element).addClass('toggled');
+                 $(element).find('.toggle-button-space').addClass('toggled')
+            }
         }
     });
     $(element).find('.minValue').val(txt + $(element).find('.slider').slider("values", 0));
@@ -339,6 +343,10 @@ function CreateTickedSlider(element, minimum, array) {
                         $(el).removeClass('unselected')
                     }
                 });
+                if ($(element).hasClass('filter-toggling')) {
+                    $(element).addClass('toggled');
+                     $(element).find('.toggle-button-space').addClass('toggled')
+                }
             }
         }
     });
