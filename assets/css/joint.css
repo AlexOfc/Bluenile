@@ -1364,14 +1364,17 @@ footer {
     text-align: center;
     font-size: 14px
 }
-.running a {
+.running a, #FooterData a{
     color:#447099;
     text-decoration: underline
 }
-.running a:hover {
+.running a:hover, #FooterData a:hover {
     text-decoration: none
 }
 .AuthorizeNetSeal a {
     display: block;
     text-align: center
+}
+#FooterData {
+    padding: 0 30px
 }
