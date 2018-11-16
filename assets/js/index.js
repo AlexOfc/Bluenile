@@ -187,8 +187,8 @@ $(document).ready(function () {
     Menu(shapesNames);
     //CreateShapeFilter(shapeData);
     CreateSlider($('.res-filter'), 0, 75, '');
-    CreateDropdownFilter($('.shape-filter'), diameterData);
-    CreateTickedSlider($('.cut-filter'), 0, dopantArray);
+    CreateDropdownFilter($('.diameter-filter'), diameterData);
+    CreateTickedSlider($('.dopant-filter'), 0, dopantArray);
     CreateTickedSlider($('.grade-filter'), 0, gradeArray);
     CreateTickedSlider($('.polish-filter'), 0, polishArray);
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
@@ -225,7 +225,7 @@ function CreateItems (object) {
     $.each(object, function(i, e){
         var count = i;
         $('.body-goods').append(`
-        <tr class="body-item body_item_`+i+`">
+        <tr class="body-item body_item_`+i+`" data-id="`+e.id+`" data-diameter="`+e.diameter+`" data-type="`+e.type+`" data-dopant="`+e.dopant+`" data-orientation="`+e.orien+`" data-res="`+e.res+`" data-thickness="`+e.thick+`">
             <td class="body-good qty-des">
                 <select name="qty"></select>
                 <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
@@ -290,6 +290,9 @@ function CreateItems (object) {
             $('.body_item_'+count).find('select').append('<option value="'+val+'">'+val+'</option>')
         });
     });
+}
+function filterItems () {
+
 }
 function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.slider').slider({

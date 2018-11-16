@@ -777,11 +777,11 @@ h6, .h6 {
     background: #d5d7d8;
     margin-top: 15px;
 }
-.cut-filter .slider-wrapper .slider, .type-filter .slider-wrapper .slider, .orientation-filter .slider-wrapper .slider {
+.dopant-filter .slider-wrapper .slider, .type-filter .slider-wrapper .slider, .orientation-filter .slider-wrapper .slider {
     background: #d5d7d8;
     margin-top: 15px
 }
-.cut-filter .filter-info, .type-filter .filter-info, .orientation-filter .filter-info, .no-pb {
+.dopant-filter .filter-info, .type-filter .filter-info, .orientation-filter .filter-info, .no-pb {
  padding-top: 20px!important;
  padding-bottom: 0!important
 }
@@ -1037,9 +1037,7 @@ h6, .h6 {
     width: .2922em;
     height: .1627em
 }
-.shape-filter .shape-filter-icon.diamond-search-sprite.CU, .shape-filter .shape-filter-icon.diamond-search-sprite.CU-white, .shape-filter .shape-filter-icon.diamond-search-sprite.EC, .shape-filter .shape-filter-icon.diamond-search-sprite.EC-white, .shape-filter .shape-filter-icon.diamond-search-sprite.MQ, .shape-filter .shape-filter-icon.diamond-search-sprite.MQ-white, .shape-filter .shape-filter-icon.diamond-search-sprite.OV, .shape-filter .shape-filter-icon.diamond-search-sprite.OV-white {
-    margin-top: -1px;
-}
+
 .slider-values {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1078,9 +1076,6 @@ h6, .h6 {
     -ms-flex-direction: row;
     flex-direction: row;
     cursor: pointer;
-}
-.filter-container.image-type-filter .filter-content .three-sixty.filter>.three-sixty-layout .shape-filter-icon.diamond-search-sprite {
-    font-size: 148px
 }
 .filter-container.image-type-filter, .filter-container.astor-filter-filter {
     padding-bottom: 30px
@@ -1204,19 +1199,7 @@ h6, .h6 {
     background-color: #f6f6f6;
     width: 100%;
 }
-.shape-filter .shape-filter-icon.diamond-search-sprite {
-        display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-}
-.shape-filter .small-shape-filter-icon.diamond-search-sprite {
-    display: none
-}
-.shape-filter-label-container {
-    display: none;
-}
-.filter-content .shape-filter {
+.filter-content .diameter-filter {
     padding: 0;
     display: -webkit-box;
     display: -webkit-flex;
