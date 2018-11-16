@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.20/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/joint.css">
@@ -22,7 +23,7 @@
 
 <body id="page-top">
     <div class="page">
-        <div class="container">
+        <div class="extra-wide-layout">
             <header class="header">
                 <div class="top-bar d-flex justify-content-between">
                     <div class="top-bar-left-block">
@@ -47,15 +48,16 @@
                             </a>
                         </span>
                         <span class="separator"></span>
-                            <span class="wish-list-top">
-                                <a href="javascript:void(0)">
-                                    Wish List
-                                </a>
-                            </span>
+                        <span class="wish-list-top">
+                            <a href="javascript:void(0)">
+                                Wish List
+                            </a>
+                        </span>
                         <span class="separator"></span>
                         <div class="country-block">
                             <button class="dropdown-toggle actionbar-button">
-                                <img src="https://bnsec.bluenile.com/bnsecure/assets/phablet/international/flags/USA.png" alt="USA">
+                                <img src="https://bnsec.bluenile.com/bnsecure/assets/phablet/international/flags/USA.png"
+                                    alt="USA">
                                 <span>English, USA</span>
                             </button>
                             <ul id="change-location-window" class="dropdown-menu">
@@ -85,7 +87,8 @@
                 <hr class="horizontal-separator">
                 <div class="logo-block d-flex justify-content-between align-items-center">
                     <a href="javascript:void(0)">
-                        <img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/BN_Midnight_Wordmark_Medium_100E31?&fmt=png-alpha" alt="Logo">
+                        <img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/BN_Midnight_Wordmark_Medium_100E31?&fmt=png-alpha"
+                            alt="Logo">
                     </a>
                     <div class="action-buttons">
 
@@ -97,8 +100,11 @@
                             </a>
                         </span>
                         <span class="separator"></span>
-                        <form action="javascript:void(0)" id="search-form" class="search">
-
+                        <form action="javascript:void(0)" id="search-form" class="search d-flex align-items-center">
+                            <div class="input-wrapper med-hidden" id="search-field">
+                                <input type="text" id="keyword-search" placeholder="Search" autocomplete="off">
+                            </div>
+                            <button type="submit" class="fa fa-search"></button>
                         </form>
                         <span class="separator"></span>
                         <div id="basket">
@@ -113,283 +119,605 @@
                 <nav id="navigation-menu">
                     <div class="blue-bar"></div>
                     <div class="navigation-bar options">
-                            <div class="segment diamonds" data-segment="diamonds">
-                                    <a href="javascript:void(0)">
-                                        <span class="link-text">Diamonds</span>
-                                    </a>
-                                    <div class="mega-drop-down">
-                                        <div class="mega-content">
-                                            <div class="hidden touch-header-link">
-                                                <a href="javascript:void(0)" class="headline">Diamonds</a>
-                                            </div>
-                                            <div class="menu-table">
-                                                <div class="column">
+                        <div class="segment diamonds" data-segment="diamonds">
+                            <a href="javascript:void(0)">
+                                <span class="link-text">Diamonds</span>
+                            </a>
+                            <div class="mega-drop-down">
+                                <div class="mega-content">
+                                    <div class="hidden touch-header-link">
+                                        <a href="javascript:void(0)" class="headline">Diamonds</a>
+                                    </div>
+                                    <div class="menu-table">
+                                        <div class="column">
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:void(0)" class="headline">
+                                                        Diamond Shape
+                                                    </a>
+                                                </li>
+                                                <li>
                                                     <ul>
                                                         <li>
-                                                            <a href="javascript:void(0)" class="headline">
-                                                                Diamond Shape
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-round navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Round</span>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-round navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Round</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-princess navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Princess</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-emerald navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Emerald</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-asscher navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Asscher</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-cushion navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Cushion</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-radiant navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Radiant</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-pear navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Pear</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-oval navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Oval</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-marquise navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Marquise</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:void(0)">
-                                                                        <div class="sprite-holder">
-                                                                            <i class="nav-heart navigation-sprite"></i>
-                                                                        </div>
-                                                                        <span class="nav-link-text">Heart</span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-princess navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Princess</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <span class="spacer"></span>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-emerald navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Emerald</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:void(0)">Astor By Blue Nile™</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-asscher navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Asscher</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:void(0)">Colored Diamonds</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-cushion navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Cushion</span>
+                                                            </a>
                                                         </li>
                                                     </ul>
-                                                </div>
-                                                <div class="column">
                                                     <ul>
                                                         <li>
-                                                            <a href="javascript:void(0)" class="headline">Build Your Own</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-radiant navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Radiant</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:void(0)">Ring</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-pear navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Pear</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <a href="javascript:void(0)">Earrings</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-oval navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Oval</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            
-                                                            <a href="javascript:void(0)">Pendant</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-marquise navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Marquise</span>
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <span class="spacer"></span>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="headline">Learn</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">How Shape Affects Price</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Learn About the 4Cs</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Ethically Sourced</a>
+                                                            <a href="javascript:void(0)">
+                                                                <div class="sprite-holder">
+                                                                    <i class="nav-heart navigation-sprite"></i>
+                                                                </div>
+                                                                <span class="nav-link-text">Heart</span>
+                                                            </a>
                                                         </li>
                                                     </ul>
-                                                </div>
-                                                <div class="column">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="javascript:void(0)" class="headline">Service & Value</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Blue Nile Credit Card</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Diamond Price Match</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Diamond Upgrade Program</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="javascript:void(0)">Sell Your Diamond Jewelry</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <a href="javascript:void(0)" class="view-all-link">
-                                                <span class="view-all">View All Diamonds</span>
-                                            </a>
-                                            <div class="mega-menu-astor-section">
-                                                <a href="javascript:void(0)">
-                                                    <img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/Astor_Refresh_MegaMenu3_2x?qlt=30" alt="img">
-                                                    <span class="text">
-                                                        <p>CUT FOR</p>
-                                                        <p>BRILLIANCE</p>
-                                                        <p class="cta">LEARN MORE</p>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                                </li>
+                                                <li>
+                                                    <span class="spacer"></span>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Astor By Blue Nile™</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Colored Diamonds</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="column">
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:void(0)" class="headline">Build Your Own</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Ring</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Earrings</a>
+                                                </li>
+                                                <li>
+
+                                                    <a href="javascript:void(0)">Pendant</a>
+                                                </li>
+                                                <li>
+                                                    <span class="spacer"></span>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)" class="headline">Learn</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">How Shape Affects Price</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Learn About the 4Cs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Ethically Sourced</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="column">
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:void(0)" class="headline">Service & Value</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Blue Nile Credit Card</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Diamond Price Match</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Diamond Upgrade Program</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">Sell Your Diamond Jewelry</a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="segment engagement" data-segment="engagement">
-                                    <a href="javascript:void(0)">
-                                        <span class="link-text">Engagement Rings</span>
+                                    <a href="javascript:void(0)" class="view-all-link">
+                                        <span class="view-all">View All Diamonds</span>
                                     </a>
-                                    <div class="mega-drop-down">
-                                        <div class="mega-content">
-                                            <div class="hidden touch-header-link">
-                                                <a href="javascript:void(0)" class="headline">Engagement Rings</a>
-                                            </div>
-                                            <div class="menu-table"></div>
-                                            <a href="javascript:void(0)" class="view-all-link">
-                                                <span class="view-all">View All Engagement Rings</span>
-                                            </a>
-                                            <div class="mega-menu-astor-section"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="segment wedding" data-segment="wedding">
-                                    <a href="javascript:void(0)">
-                                        <span class="link-text">Wedding Rings</span>
-                                    </a>
-                                    <div class="mega-drop-down">
-                                        <div class="mega-content">
-                                            <div class="hidden touch-header-link">
-                                                <a href="javascript:void(0)" class="headline">Wedding Rings</a>
-                                            </div>
-                                            <div class="menu-table"></div>
-                                            <a href="javascript:void(0)" class="view-all-link">
-                                                <span class="view-all">View All Wedding Rings</span>
-                                            </a>
-                                            <div class="mega-menu-astor-section"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="segment jewelry" data-segment="jewelry">
-                                    <a href="javascript:void(0)">
-                                        <span class="link-text">Jewelry</span>
-                                    </a>
-                                    <div class="mega-drop-down">
-                                        <div class="mega-content">
-                                            <div class="hidden touch-header-link">
-                                                <a href="javascript:void(0)" class="headline"></a>
-                                            </div>
-                                            <div class="menu-table"></div>
-                                            <a href="javascript:void(0)" class="view-all-link">
-                                                <span class="view-all">View All Jewelry</span>
-                                            </a>
-                                            <div class="mega-menu-astor-section"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="segment gifts" data-segment="gifts">
-                                <a href="javascript:void(0)">
-                                        <span class="link-text">Gifts</span>
-                                </a>
-                                <div class="mega-drop-down">
-                                    <div class="mega-content">
-                                        <div class="hidden touch-header-link">
-                                            <a href="javascript:void(0)" class="headline"></a>
-                                        </div>
-                                        <div class="menu-table"></div>
-                                        <a href="javascript:void(0)" class="view-all-link">
-                                            <span class="view-all">View All Gifts</span>
+                                    <div class="mega-menu-astor-section">
+                                        <a href="javascript:void(0)">
+                                            <img src="https://bnsec.bluenile.com/bluenile/is/image/bluenile/Astor_Refresh_MegaMenu3_2x?qlt=30"
+                                                alt="img">
+                                            <span class="text">
+                                                <p>CUT FOR</p>
+                                                <p>BRILLIANCE</p>
+                                                <p class="cta">LEARN MORE</p>
+                                            </span>
                                         </a>
-                                        <div class="mega-menu-astor-section"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="segment education" data-segment="education">
-                                <a href="javascript:void(0)">
-                                    <span class="link-text">Education</span>
-                                </a>
-                                <div class="mega-drop-down">
-                                    <div class="mega-content">
-                                        <div class="hidden touch-header-link">
-                                            <a href="javascript:void(0)" class="headline"></a>
-                                        </div>
-                                        <div class="menu-table"></div>
-                                        <a href="javascript:void(0)" class="view-all-link">
-                                            <span class="view-all">View All Education</span>
-                                        </a>
-                                        <div class="mega-menu-astor-section"></div>
+                        </div>
+                        <div class="segment engagement" data-segment="engagement">
+                            <a href="javascript:void(0)">
+                                <span class="link-text">Engagement Rings</span>
+                            </a>
+                            <div class="mega-drop-down">
+                                <div class="mega-content">
+                                    <div class="hidden touch-header-link">
+                                        <a href="javascript:void(0)" class="headline">Engagement Rings</a>
                                     </div>
+                                    <div class="menu-table"></div>
+                                    <a href="javascript:void(0)" class="view-all-link">
+                                        <span class="view-all">View All Engagement Rings</span>
+                                    </a>
+                                    <div class="mega-menu-astor-section"></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="segment wedding" data-segment="wedding">
+                            <a href="javascript:void(0)">
+                                <span class="link-text">Wedding Rings</span>
+                            </a>
+                            <div class="mega-drop-down">
+                                <div class="mega-content">
+                                    <div class="hidden touch-header-link">
+                                        <a href="javascript:void(0)" class="headline">Wedding Rings</a>
+                                    </div>
+                                    <div class="menu-table"></div>
+                                    <a href="javascript:void(0)" class="view-all-link">
+                                        <span class="view-all">View All Wedding Rings</span>
+                                    </a>
+                                    <div class="mega-menu-astor-section"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment jewelry" data-segment="jewelry">
+                            <a href="javascript:void(0)">
+                                <span class="link-text">Jewelry</span>
+                            </a>
+                            <div class="mega-drop-down">
+                                <div class="mega-content">
+                                    <div class="hidden touch-header-link">
+                                        <a href="javascript:void(0)" class="headline"></a>
+                                    </div>
+                                    <div class="menu-table"></div>
+                                    <a href="javascript:void(0)" class="view-all-link">
+                                        <span class="view-all">View All Jewelry</span>
+                                    </a>
+                                    <div class="mega-menu-astor-section"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment gifts" data-segment="gifts">
+                            <a href="javascript:void(0)">
+                                <span class="link-text">Gifts</span>
+                            </a>
+                            <div class="mega-drop-down">
+                                <div class="mega-content">
+                                    <div class="hidden touch-header-link">
+                                        <a href="javascript:void(0)" class="headline"></a>
+                                    </div>
+                                    <div class="menu-table"></div>
+                                    <a href="javascript:void(0)" class="view-all-link">
+                                        <span class="view-all">View All Gifts</span>
+                                    </a>
+                                    <div class="mega-menu-astor-section"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="segment education" data-segment="education">
+                            <a href="javascript:void(0)">
+                                <span class="link-text">Education</span>
+                            </a>
+                            <div class="mega-drop-down">
+                                <div class="mega-content">
+                                    <div class="hidden touch-header-link">
+                                        <a href="javascript:void(0)" class="headline"></a>
+                                    </div>
+                                    <div class="menu-table"></div>
+                                    <a href="javascript:void(0)" class="view-all-link">
+                                        <span class="view-all">View All Education</span>
+                                    </a>
+                                    <div class="mega-menu-astor-section"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
+
                 </nav>
             </header>
+            <section class="searchbody">
+                <div class="filters">
+                    <div class="filters-bar" id="filters-bar">
+                        <h1>Search For Diamonds</h1>
+                        <div class="view-filters-button">
+                            <button class="bn-button big-button">
+                                <span>Filters</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="filters-backdrop"></div>
+                    <div class="filters-body clearfix d-flex flex-wrap">
+                        <div class="filter-container image-type-filter col-md-4">
+                            <div class="filter-content">
+                                <div class="three-sixty filter">
+                                    <div class="three-sixty-layout inline-filter">
+                                        <div>
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox" id="three-sixty-checkbox">
+                                                    <label for="three-sixty-checkbox" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="logo">
+                                            <div class="shape-filter-icon diamond-search-sprite three-sixty-blue"></div>
+                                        </div>
+                                        <div class="text">
+                                            <span>View Available</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container astor-filter-filter col-md-8">
+                            <div class="filter-content">
+                                <div class="astor-filter filter">
+                                    <div class="astor-filter-layout inline-filter">
+                                        <div>
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox" id="astor-filter-checkbox">
+                                                    <label for="astor-filter-checkbox" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="logo">
+                                            <img class="astor-logo" src="https://bnsec.bluenile.com/bnsecure/assets/phablet/icons/Astor-Logo-289Small.png">
+                                        </div>
+                                        <div class="text">
+                                            <span>Diamonds cut for brilliance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container shape-filter col-md-4">
+                            <div class="filter-info d-flex align-items-center">
+                                <h3 class="left cell">
+                                    Shape
+                                    <span class="range"> (2)</span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="shape-filter d-flex flex-wrap">
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Round</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite RD"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite RD"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Princess</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite PR"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite PR"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Emerald</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite EC"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite EC"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Asscher</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite AS"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite AS"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Cushion</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite CU"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite CU"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Marquise</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite MQ"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite MQ"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Radiant</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite RA"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite RA"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Oval</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite OV"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite OV"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Pear</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite PS"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite PS"></div>
+                                        </div>
+                                    </div>
+                                    <div class="shape-filter-button">
+                                        <div class="shape-filter-label-container">
+                                            <div class="bn-checkbox">
+                                                <div class="checkbox-container">
+                                                    <input type="checkbox">
+                                                    <label for="has-visualization-filter" class="new-checkbox"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="shape-filter-button-label">Heart</div>
+                                        <div class="shape-filter-button-inner">
+                                            <div class="shape-filter-icon diamond-search-sprite HS"></div>
+                                            <div class="small-shape-filter-icon diamond-search-sprite HS"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container price-filter col-md-4">
+                            <div class="filter-info d-flex align-items-center">
+                                <h3 class="left cell">
+                                    Price
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                    <div class="slider-inputs clearfix">
+                                        <input type="text" class="minValue">
+                                        <input type="text" class="maxValue">
+                                    </div>
+                                    <div class="slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container carat-filter col-md-4">
+                            <div class="filter-info d-flex align-items-center">
+                                <h3 class="left cell">
+                                    Carat
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="middle cell">
+                                    <div class="tip">
+                                        <div class="icon-component info-sign"><svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 384 384"><path d="M256 312v-16q0-3.5-2.25-5.75T248 288h-24V168q0-3.5-2.25-5.75T216 160h-80q-3.5 0-5.75 2.25T128 168v16q0 3.5 2.25 5.75T136 192h24v96h-24q-3.5 0-5.75 2.25T128 296v16q0 3.5 2.25 5.75T136 320h112q3.5 0 5.75-2.25T256 312zm-32-192V72q0-3.5-2.25-5.75T216 64h-48q-3.5 0-5.75 2.25T160 72v48q0 3.5 2.25 5.75T168 128h48q3.5 0 5.75-2.25T224 120zm160 72q0 52.25-25.75 96.375t-69.875 69.875Q244.25 384 192 384t-96.375-25.75Q51.5 332.5 25.75 288.375T0 192q0-52.25 25.75-96.375T95.625 25.75Q139.75 0 192 0t96.375 25.75Q332.5 51.5 358.25 95.625T384 192z"></path></svg></div>
+                                    </div>
+                                </div>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                    <div class="slider-inputs clearfix">
+                                        <input type="text" class="minValue">
+                                        <input type="text" class="maxValue">
+                                    </div>
+                                    <div class="slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container cut-filter col-md-4">
+                                <div class="filter-info d-flex align-items-center">
+                                        <h3 class="left cell">
+                                            Cut
+                                            <span class="range"></span>
+                                        </h3>
+                                        <div class="right cell">
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+                                    <div class="filter-content">
+                                        <div class="slider-wrapper">
+                                            <div class="slider-values"></div>
+                                            <div class="slider"></div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="filter-container color-filter col-md-4">
+                            <div class="filter-info d-flex align-items-center">
+                                <h3 class="left cell">
+                                    Color
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                        <div class="slider-values"></div>
+                                    <div class="slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container clarity-filter col-md-4">
+                            <div class="filter-info d-flex align-items-center">
+                                <h3 class="left cell">
+                                    Clarity
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                        <div class="slider-values"></div>
+                                    <div class="slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <footer>
             </footer>
         </div>
     </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="assets/js/index.js"></script>
