@@ -813,9 +813,6 @@ h6, .h6 {
     display: none;
     color: #888;
 }
-.filter-info>.cell.right {
-    display: none;
-}
 .icon-component {
     display: inline-block;
     width: 14px;
@@ -1278,6 +1275,7 @@ h6, .h6 {
     cursor: pointer;
     background: rgb(136, 136, 136);
     text-align: center;
+    vertical-align: middle;
 }
 .body-goods {
     display: table-row-group;
@@ -1319,4 +1317,33 @@ h6, .h6 {
 }
 #itemsTab li:first-child {
     margin-left: 20px;
+}
+.toggle-button {
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+}
+.toggle-button-background {
+    background-color: #d5d7d8;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 43px;
+}
+.toggle-button.toggled .toggle-button-background {
+    background-color: #100e31;
+}
+.toggle-button-switch {
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    -webkit-transition: left .25s;
+    transition: left .25s;
 }
