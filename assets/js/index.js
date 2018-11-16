@@ -1,16 +1,132 @@
 // Variables and data
-let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'China', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece']
-let selectElem = document.getElementById("shipping-country");
-let dopantArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'];
-let typeArray = ['P', 'N', 'ANY', 'Undoped'];
-let orientationArray = ['<0001>', '<100>', '<110>', '<111>', 'ANY', 'N/A', '<510>', '<112>', '<113>', '<557>', '<111B>', '<111A>', '<1-102>', 'ST-cut', 'X-cut', 'Y-cut', 'Y-X-cut', 'Z-cut', 'AT-cut', '<11-20>', '<111-4°>', '<111-3°>']
-let shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire']
-let diametersNames = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken']
-let gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality']
-let resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035];
-let polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS']
-let thicknessNames = ['320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '280', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD']
-let diameterData = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken']
+let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'China', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece'],
+    selectElem = document.getElementById("shipping-country"),
+    dopantArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'],
+    typeArray = ['P', 'N', 'ANY', 'Undoped'],
+    orientationArray = ['<0001>', '<100>', '<110>', '<111>', 'ANY', 'N/A', '<510>', '<112>', '<113>', '<557>', '<111B>', '<111A>', '<1-102>', 'ST-cut', 'X-cut', 'Y-cut', 'Y-X-cut', 'Z-cut', 'AT-cut', '<11-20>', '<111-4°>', '<111-3°>'],
+    shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire'],
+    diametersNames = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
+    gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality'],
+    resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035];
+    polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
+    thicknessNames = ['320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '280', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD'],
+    diameterData = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
+    itemsData = [
+        {
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '>50',
+            thick: '100$',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '>50',
+            thick: '100$',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '>50',
+            thick: '100$',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '>50',
+            thick: '100$',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '>50',
+            thick: '100$',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '>50',
+            thick: '100$',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        }
+    ]
 /*let shapeData = [
     {
         name: 'Round',
@@ -66,6 +182,7 @@ $(document).ready(function () {
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
     CreateTickedSlider($('.type-filter'), 0, typeArray);
     CreateTickedSlider($('.orientation-filter'), 0, orientationArray);
+    CreateItems(itemsData)
     hideFilters()
     keyUpFunctions ();
     clickFunctions()
@@ -91,7 +208,70 @@ $(document).ready(function () {
         `);
     });
 }*/
-
+function CreateItems (object) {
+    $.each(object, function(i, e){
+        var count = i;
+        $('.body-goods').append(`
+        <div class="body-item body_item_`+i+`">
+            <div class="body-good qty-des">
+                <select name="qty"></select>
+                <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
+            </div>
+            <div class="body-good">
+                 `+e.diameter+`
+            </div>
+            <div class="body-good">
+                 `+e.type+`
+            </div>
+            <div class="body-good">
+                 `+e.dopant+`
+            </div>
+            <div class="body-good">
+                 `+e.orien+`
+            </div>
+            <div class="body-good">
+                 `+e.res+`
+            </div>
+            <div class="body-good">
+                 `+e.thick+`
+            </div>
+            <div class="body-good">
+                 `+e.quantity+`
+            </div>
+            <div class="body-good">
+             `+e.one_unit_price+`
+            </div>
+            <div class="body-good">
+             `+e.five_unit_price+`
+            </div>
+            <div class="body-good">
+                 `+e.ten_unit_price+`
+            </div>
+            <div class="body-good">
+                `+e.twfive_unit_price+`
+            </div>
+            <div class="body-good">
+             `+e.fifty_unit_price+`
+            </div>
+            <div class="body-good">
+             `+e.hand_unit_price+`
+            </div>
+            <div class="body-good">
+                 `+e.twohand_unit_price+`
+            </div>
+            <div class="body-good">
+                 `+e.fivehand_unit_price+`
+            </div>
+            <div class="body-good">
+             `+e.description+`
+            </div>
+        </div>
+        `);
+        $.each(e.qty, function(key, val) {
+            $('.body_item_'+count).find('select').append('<option value="'+val+'">'+val+'</option>')
+        });
+    });
+}
 function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.slider').slider({
         range: true,
