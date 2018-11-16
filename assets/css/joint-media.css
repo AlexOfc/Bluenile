@@ -5,14 +5,31 @@
 }
 @media screen and (max-width: 992px)
 {
-    
+    .top-bar-left-block a, .top-bar-right-block > * {
+        font-size: 12px;
+    }
+    .navigation-bar .segment > a {
+        font-size: 14px;
+    }
 }
 @media screen and (min-width:769px) and (max-width: 992px){
     
 }
 @media screen and (max-width: 768px)
 {
-   
+   .top-bar, .delivery-advantages, .delivery-advantages + .separator, .search {
+       display: none!important;
+   }
+   .logo-block {
+    padding: 8px 12px;
+   }
+   .logo-block img {
+    width: 146px;
+   }
+   .filters-bar h1 {
+    font-size: 16px;
+    letter-spacing: .5px;
+   }
 }
 @media screen and (max-width: 576px){
     

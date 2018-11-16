@@ -1258,3 +1258,66 @@ h6, .h6 {
     line-height: 40px;
     cursor: pointer;
 }
+.goods-table {
+    display: table;
+    width: 100%;
+    border-left: 1px solid #f6f6f6;
+    border-right: 1px solid #f6f6f6;
+    overflow-x: auto
+}
+.goods-table .header-goods {
+    display: table-row;
+}
+.header-cell {
+    display: table-cell;
+    height: 32px;
+    padding: 0 7px;
+    font-size: 12px;
+    letter-spacing: .5px;
+    color: #fff;
+    border-left: 1px solid #d5d7d8;
+    cursor: pointer;
+    background: rgb(136, 136, 136);
+    text-align: center;
+}
+.body-goods {
+    display: table-row-group;
+}
+.body-item{
+    display: table-row;
+    
+}
+.body-item:nth-child(odd) {
+    background:#f6f6f6
+}
+.body-good {
+    display: table-cell;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+.add-to-cart i {
+    font-size: 20px;
+}
+#itemsTab {
+    margin-top: 20px
+}
+#itemsTab li a {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 3px 3px 0 0;
+    border: 1px solid #d5d7d8;
+    line-height: 19px;
+    letter-spacing: .44px;
+    font-variant-numeric: lining-nums;
+    margin-left: 10px
+}
+#itemsTab li a.active {
+    background-color: #100e31;
+    border-color: #100e31;
+    color: #fff;
+    
+}
+#itemsTab li:first-child {
+    margin-left: 20px;
+}
