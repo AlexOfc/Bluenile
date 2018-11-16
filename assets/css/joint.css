@@ -693,26 +693,6 @@ h6, .h6 {
 .no-wrap {
     white-space: nowrap;
 }
-.mega-drop-down a.view-all-link {
-    color: #100E31;    
-    padding: 0 24px 15px;
-    text-transform: capitalize;
-    display: block;
-    font-size: 14px;
-    font-family: "VerlagBold",Arial,Helvetica,sans-serif;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 28px;
-}
-.view-all {
-    font-size: 11px
-}
-.segment .mega-drop-down .view-all-link:after {
-    content: "\f105";
-    font-family: "FontAwesome";
-    font-size: 14px;
-    vertical-align: bottom;
-}
 .segment .mega-drop-down li {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
