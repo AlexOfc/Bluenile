@@ -78,17 +78,17 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
         {
             id: 4,
             qty: [7, 15, 23, 42],
-            diameter: '100mm',
-            type: 'Undoped',
-            dopant: 'Undoped',
+            diameter: '400mm',
+            type: 'F',
+            dopant: 'I',
             orien: '<111>',
             res: '>50',
             thick: '100$',
-            leadTime: '1 week',
+            leadTime: '3 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
-            ten_unit_price: '100$',
+            ten_unit_price: '1000$',
             twfive_unit_price: '100$',
             fifty_unit_price: '100$',
             hand_unit_price: '100$',
@@ -109,7 +109,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
-            ten_unit_price: '100$',
+            ten_unit_price: '800$',
             twfive_unit_price: '100$',
             fifty_unit_price: '100$',
             hand_unit_price: '100$',
@@ -128,7 +128,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             thick: '100$',
             leadTime: '1 week',
             quantity: '25',
-            one_unit_price: '100$',
+            one_unit_price: '300$',
             five_unit_price: '100$',
             ten_unit_price: '100$',
             twfive_unit_price: '100$',
@@ -197,7 +197,8 @@ $(document).ready(function () {
     CreateItems(itemsData)
     hideFilters()
     keyUpFunctions ();
-    clickFunctions()
+    clickFunctions();
+    $('#all').DataTable();
 });
 /*function CreateShapeFilter(array) {
     $.each(array, function (i, val) {
@@ -224,66 +225,66 @@ function CreateItems (object) {
     $.each(object, function(i, e){
         var count = i;
         $('.body-goods').append(`
-        <div class="body-item body_item_`+i+`">
-            <div class="body-good qty-des">
+        <tr class="body-item body_item_`+i+`">
+            <td class="body-good qty-des">
                 <select name="qty"></select>
                 <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.id+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.diameter+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.type+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.dopant+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.orien+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.res+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.thick+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.leadTime+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.quantity+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
              `+e.one_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
              `+e.five_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                  `+e.ten_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
                 `+e.twfive_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
              `+e.fifty_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
              `+e.hand_unit_price+`
-            </div>
-            <div class="body-good">
-                 `+e.twohand_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
+                `+e.twohand_unit_price+`
+            </td>
+            <td class="body-good">
                  `+e.fivehand_unit_price+`
-            </div>
-            <div class="body-good">
+            </td>
+            <td class="body-good">
              `+e.description+`
-            </div>
-        </div>
+            </td>
+        </tr>
         `);
         $.each(e.qty, function(key, val) {
             $('.body_item_'+count).find('select').append('<option value="'+val+'">'+val+'</option>')
@@ -373,60 +374,7 @@ function keyUpFunctions () {
         $(this).parent().next().slider('values',1,$(this).val());
     });
 }
-function sortTable(n, id) {
-    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById(id);
-    switching = true;
-    // Set the sorting direction to ascending:
-    dir = "asc"; 
-    /* Make a loop that will continue until
-    no switching has been done: */
-    while (switching) {
-      // Start by saying: no switching is done:
-      switching = false;
-      rows = table.rows;
-      /* Loop through all table rows (except the
-      first, which contains table headers): */
-      for (i = 1; i < (rows.length - 1); i++) {
-        // Start by saying there should be no switching:
-        shouldSwitch = false;
-        /* Get the two elements you want to compare,
-        one from current row and one from the next: */
-        x = rows[i].getElementsByClassName("body-item")[n];
-        y = rows[i + 1].getElementsByClassName("body-item")[n];
-        /* Check if the two rows should switch place,
-        based on the direction, asc or desc: */
-        if (dir == "asc") {
-          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-            // If so, mark as a switch and break the loop:
-            shouldSwitch = true;
-            break;
-          }
-        } else if (dir == "desc") {
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            // If so, mark as a switch and break the loop:
-            shouldSwitch = true;
-            break;
-          }
-        }
-      }
-      if (shouldSwitch) {
-        /* If a switch has been marked, make the switch
-        and mark that a switch has been done: */
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-        // Each time a switch is done, increase this count by 1:
-        switchcount ++; 
-      } else {
-        /* If no switching has been done AND the direction is "asc",
-        set the direction to "desc" and run the while loop again. */
-        if (switchcount == 0 && dir == "asc") {
-          dir = "desc";
-          switching = true;
-        }
-      }
-    }
-  }
+
 function clickFunctions() {
     $('.slider-value').on('click', function(){
             $(this).parent().next().slider('values',0, $(this).attr('data-count'))

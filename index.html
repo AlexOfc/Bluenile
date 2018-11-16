@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.20/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/joint.css">
@@ -56,7 +57,7 @@
 
                         </nav>
                     </div>
-                    <div class="top-bar-right-block">                         
+                    <div class="top-bar-right-block">
                         <div class="country-block">
                             <button id="dropdownMenuButton" class="dropdown-toggle actionbar-button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -94,8 +95,7 @@
                 <hr class="horizontal-separator">
                 <div class="logo-block d-flex justify-content-between align-items-center">
                     <a href="javascript:void(0)">
-                        <img src="https://order.universitywafer.com/Images/logo_UniversityWafer.png"
-                            alt="Logo">
+                        <img src="https://order.universitywafer.com/Images/logo_UniversityWafer.png" alt="Logo">
                     </a>
                     <div class="action-buttons">
 
@@ -106,7 +106,7 @@
                                 <span>Wafers to you 24/7</span>
                             </a>
                         </span>
-            
+
                         <span class="separator"></span>
                         <div id="basket">
                             <a href="javascript:void(0)">
@@ -138,7 +138,7 @@
                                     <span class="range"> (2)</span>
                                 </h3>
                                 <div class="right cell">
-                                    
+
                                 </div>
                             </div>
                             <div class="filter-content">
@@ -150,7 +150,7 @@
                         </div>
 
 
-                        
+
 
                         <div class="filter-container type-filter col-md-12">
                             <div class="filter-info d-flex align-items-center no-pb">
@@ -159,7 +159,7 @@
                                     <span class="range"></span>
                                 </h3>
                                 <div class="right cell">
-                                  
+
                                 </div>
                             </div>
                             <div class="filter-content">
@@ -257,11 +257,11 @@
                                     <span class="range"></span>
                                 </h3>
                                 <div class="right cell">
-                                   <div class="toggle-button-space">
-                                       <div class="toggle-button-background">
-                                           <div class="toggle-button-switch"></div>
-                                       </div>
-                                   </div>
+                                    <div class="toggle-button-space">
+                                        <div class="toggle-button-background">
+                                            <div class="toggle-button-switch"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="filter-content">
@@ -301,6 +301,24 @@
                             </span>
                         </div>
                     </div>
+                    <div class="litHeader_desktop">
+
+                        
+                      
+                        <p style="text-align: center; margin-top: 30px;margin-bottom: 30px">
+                                <span style="font-size:16px;"><span style="color: rgb(0, 102, 0);">Please click <b><a href="http://order.universitywafer.com/help.aspx"
+                                    target="_self">here</a></b> for help or feel free to Contact Us at
+                            1-800-216-8349 or <b><a href="mailto:chris@universitywafers.com">chris@universitywafers.com</a></b></span></span>
+                            <span style="font-size:16px;"><span style="color: rgb(209, 102, 3); font-style: italic;">Note:
+                                    SSP = Single Side Polished, DSP = Double Side Polished, E = Etched, C = AsCut,
+                                    Material - CZ unless noted, L = Lapped, Und = Undoped (Intrinsic)</span></span>
+
+                            <span style="font-size:16px;"><span style="color: rgb(209, 102, 3); font-style: italic;">Click
+                                    <b>Headers</b> to sort by that category. All prices in <b>USD</b> only. One unit =
+                                    one wafer.</span></span>
+                        </p>
+
+                    </div>
                     <ul class="nav nav-tabs" id="itemsTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab"
@@ -312,118 +330,128 @@
                         </li>
                     </ul>
                     <div class="tab-content" id="itemsTabContent">
-                        <div class="tab-pane fade show active goods-table" id="all" role="tabpanel" aria-labelledby="all-tab">
-                            <div class="header-goods">
-                                <div class="header-cell">
-                                    QTY Desired
-                                </div>
-                                <div class="header-cell" onclick="sortTable(2, 'all')">
-                                    ID
-                                </div>
-                                <div class="header-cell">
-                                    Diameter
-                                </div>
-                                <div class="header-cell">
-                                    Type
-                                </div>
-                                <div class="header-cell">
-                                    Dopant
-                                </div>
-                                <div class="header-cell">
-                                    Orien
-                                </div>
-                                <div class="header-cell">
-                                    Res {ohm-cm}
-                                </div>
-                                <div class="header-cell">
-                                    Thick(UM)
-                                </div>
-                                <div class="header-cell">
-                                    Lead Time
-                                </div>                                
-                                <div class="header-cell">
-                                    Quantity
-                                </div>
-                                <div class="header-cell">
-                                    1 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    5 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    10 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    25 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    50 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    100 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    200 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    500 Unit Price
-                                </div>
-                                <div class="header-cell">
-                                    Description
-                                </div>
-                            </div>
-                            <div class="body-goods">
-                                
-                            </div>
-                        </div>
+                        <table class="tab-pane fade show active goods-table" id="all" role="tabpanel" aria-labelledby="all-tab">
+                            <thead>
+                                <tr class="header-goods">
+                                    <th class="header-cell">
+                                        QTY Desired
+                                    </th>
+                                    <th class="header-cell">
+                                        ID
+                                    </th>
+                                    <th class="header-cell">
+                                        Diameter
+                                    </th>
+                                    <th class="header-cell">
+                                        Type
+                                    </th>
+                                    <th class="header-cell">
+                                        Dopant
+                                    </th>
+                                    <th class="header-cell">
+                                        Orien
+                                    </th>
+                                    <th class="header-cell">
+                                        Res {ohm-cm}
+                                    </th>
+                                    <th class="header-cell">
+                                        Thick(UM)
+                                    </th>
+                                    <th class="header-cell">
+                                        Lead Time
+                                    </th>
+                                    <th class="header-cell">
+                                        Quantity
+                                    </th>
+                                    <th class="header-cell">
+                                        1 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        5 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        10 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        25 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        50 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        100 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        200 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        500 Unit Price
+                                    </th>
+                                    <th class="header-cell">
+                                        Description
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="body-goods">
+
+                            </tbody>
+                        </table>
                         <div class="tab-pane fade" id="best" role="tabpanel" aria-labelledby="best-tab">
                         </div>
                     </div>
                 </div>
             </section>
-            <footer> 
-                        <div id="FooterData">
+            <footer>
+                <div id="FooterData">
 
-            
-                                <p>
-                                    Return Policy: There will be a 15% restocking fee for all returns. All returns must be sent back within 15 days of recieving the shipment. All duties, domestic and international taxes, shipping and customs fees are paid by the buyer and are not refunded. Custom orders are on a best effort basis with no refunds.</p>
-                                <p>
-                                    Return shipment is paid for by the buyer unless extenuating circumstances arise</p>
-                                <p>
-                                    Refund Policy: Please allow the credit card processor up to 7 days to credit back your credit card</p>
-                                <p>
-                                    Cancellation Policy: We will make every attempt to cancel an order before it ships. Once shipped, the order cannot be canceled</p>
-                                <p>
-                                    Delivery/Shipping Policy: We do not ship to any countries not allowed by the US customs. This includes but is not limited to Syria, North Korea, Sudan, Iran, and Cuba. <strong>OVERNIGHT/Next Day orders received AFTER 3:30pm EASTERN Standard Time will ship the NEXT Business Day.</strong></p>
-                                <p>
-                                    <a href="privacypolicy.aspx">Privacy policy</a></p>
-                                <p>
-                                    &nbsp;</p>
-                            
-                
-                <div class="running">
-                    Running On <a href="http://www.compsdoc.com">CompsDoc LLC</a> Tigra Framework
-                </div>
-    
-            <br />
-    
-            <br />
-    
-                <!-- (c) 2005, 2013. Authorize.Net is a registered trademark of CyberSource Corporation -->
-    
-                <div class="AuthorizeNetSeal">
-                    <a href="javascript:foid(0)">
-                        <img src="https://verify.authorize.net/anetseal/images/secure90x72.gif" alt="logo">
-                    </a>
-            
-    
-                 <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Online Payments</a>
-                    <a href="javascript:void(0)">
-                        <img src="https://sealserver.trustwave.com/seal_image.php?customerId=1f377473b6a4476bac95ba6505397a17&size=105x54&style=" alt="logo">
-                    </a>
-                </div>
-    
-    
+
+                    <p>
+                        Return Policy: There will be a 15% restocking fee for all returns. All returns must be sent
+                        back within 15 days of recieving the shipment. All duties, domestic and international taxes,
+                        shipping and customs fees are paid by the buyer and are not refunded. Custom orders are on a
+                        best effort basis with no refunds.</p>
+                    <p>
+                        Return shipment is paid for by the buyer unless extenuating circumstances arise</p>
+                    <p>
+                        Refund Policy: Please allow the credit card processor up to 7 days to credit back your credit
+                        card</p>
+                    <p>
+                        Cancellation Policy: We will make every attempt to cancel an order before it ships. Once
+                        shipped, the order cannot be canceled</p>
+                    <p>
+                        Delivery/Shipping Policy: We do not ship to any countries not allowed by the US customs. This
+                        includes but is not limited to Syria, North Korea, Sudan, Iran, and Cuba. <strong>OVERNIGHT/Next
+                            Day orders received AFTER 3:30pm EASTERN Standard Time will ship the NEXT Business Day.</strong></p>
+                    <p>
+                        <a href="privacypolicy.aspx">Privacy policy</a></p>
+                    <p>
+                        &nbsp;</p>
+
+
+                    <div class="running">
+                        Running On <a href="http://www.compsdoc.com">CompsDoc LLC</a> Tigra Framework
+                    </div>
+
+                    <br />
+
+                    <br />
+
+                    <!-- (c) 2005, 2013. Authorize.Net is a registered trademark of CyberSource Corporation -->
+
+                    <div class="AuthorizeNetSeal">
+                        <a href="javascript:foid(0)">
+                            <img src="https://verify.authorize.net/anetseal/images/secure90x72.gif" alt="logo">
+                        </a>
+
+
+                        <a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank">Online Payments</a>
+                        <a href="javascript:void(0)">
+                            <img src="https://sealserver.trustwave.com/seal_image.php?customerId=1f377473b6a4476bac95ba6505397a17&size=105x54&style="
+                                alt="logo">
+                        </a>
+                    </div>
+
+
             </footer>
         </div>
     </div>
@@ -431,6 +459,7 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script src="assets/js/index.js"></script>
 

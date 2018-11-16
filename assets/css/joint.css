@@ -1273,7 +1273,7 @@ h6, .h6 {
 .header-cell {
     display: table-cell;
     height: 32px;
-    padding: 0 7px;
+    padding: 0 7px!important;
     font-size: 12px;
     letter-spacing: .5px;
     color: #fff;
@@ -1282,9 +1282,19 @@ h6, .h6 {
     background: rgb(136, 136, 136);
     text-align: center;
     vertical-align: middle;
+    background-image: none!important
 }
 .body-goods {
     display: table-row-group;
+}
+#all_filter, #all_length, #all_info, #all_paginate {
+display: none;
+}
+.dataTables_wrapper {
+    overflow: auto
+}
+table.dataTable.no-footer {
+    border-bottom-color: #d5d7d8 
 }
 .body-item{
     display: table-row;
@@ -1295,7 +1305,7 @@ h6, .h6 {
 }
 .body-good {
     display: table-cell;
-    padding: 5px;
+    padding: 5px!important;
     text-align: center;
     vertical-align: middle;
 }
