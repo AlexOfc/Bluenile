@@ -60,12 +60,12 @@ $(document).ready(function () {
     CreateSlider($('.price-filter'), 0, 1000, '$');
     CreateSlider($('.carat-filter'), 0, 1000, '');
     CreateDropdownFilter($('.shape-filter'), diameterData);
-    CreateDropdownFilter($('.cut-filter'), dopantArray);
+    CreateTickedSlider($('.cut-filter'), 0, dopantArray);
     CreateTickedSlider($('.grade-filter'), 0, gradeArray);
     CreateTickedSlider($('.polish-filter'), 0, polishArray);
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
     CreateTickedSlider($('.type-filter'), 0, typeArray);
-    CreateDropdownFilter($('.orientation-filter'), orientationArray);
+    CreateTickedSlider($('.orientation-filter'), 0, orientationArray);
 });
 /*function CreateShapeFilter(array) {
     $.each(array, function (i, val) {
