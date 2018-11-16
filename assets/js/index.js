@@ -9,8 +9,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
     gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality'],
     resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035];
     polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
-    thicknessNames = ['320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '280', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD'],
-    diameterData = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
+    thicknessNames = ['280', '320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD'],
+    diameterData = ['100mm', '0.5mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     itemsData = [
         {
             id: 1,
@@ -19,8 +19,10 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '>50',
-            thick: '100$',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
             leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
@@ -40,8 +42,10 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '>50',
-            thick: '100$',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
             leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
@@ -61,8 +65,10 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '>50',
-            thick: '100$',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
             leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
@@ -79,11 +85,13 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             id: 4,
             qty: [7, 15, 23, 42],
             diameter: '400mm',
-            type: 'F',
-            dopant: 'I',
+            type: 'P',
+            dopant: 'S',
             orien: '<111>',
-            res: '>50',
-            thick: '100$',
+            res: '50',
+            thick: '280',
+            grade: 'SAW',
+            polish: 'E/E',
             leadTime: '3 week',
             quantity: '25',
             one_unit_price: '100$',
@@ -99,12 +107,14 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
         {
             id: 1156,
             qty: [7, 15, 23, 42],
-            diameter: '100mm',
+            diameter: '0.5mm',
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '>50',
-            thick: '100$',
+            res: '50',
+            thick: '280',
+            grade: 'SAW',
+            polish: 'E/E',
             leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
@@ -120,12 +130,290 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
         {
             id: 2482,
             qty: [7, 15, 23, 42],
+            diameter: '0.5mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '300$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 1,
+            qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '>50',
-            thick: '100$',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 2,
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 3,
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 4,
+            qty: [7, 15, 23, 42],
+            diameter: '400mm',
+            type: 'P',
+            dopant: 'S',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'SAW',
+            polish: 'E/E',
+            leadTime: '3 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '1000$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 1156,
+            qty: [7, 15, 23, 42],
+            diameter: '0.5mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'SAW',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '800$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 2482,
+            qty: [7, 15, 23, 42],
+            diameter: '0.5mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '300$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 1,
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'Undoped',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 2,
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'P',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 3,
+            qty: [7, 15, 23, 42],
+            diameter: '100mm',
+            type: 'N',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '100$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 40,
+            qty: [7, 15, 23, 42],
+            diameter: '400mm',
+            type: 'P',
+            dopant: 'S',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'SAW',
+            polish: 'E/E',
+            leadTime: '3 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '1000$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 1156,
+            qty: [7, 15, 23, 42],
+            diameter: '0.5mm',
+            type: 'N',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'SAW',
+            polish: 'E/E',
+            leadTime: '1 week',
+            quantity: '25',
+            one_unit_price: '100$',
+            five_unit_price: '100$',
+            ten_unit_price: '800$',
+            twfive_unit_price: '100$',
+            fifty_unit_price: '100$',
+            hand_unit_price: '100$',
+            twohand_unit_price: '100$',
+            fivehand_unit_price: '100$',
+            description: 'P type ( Gallium doped)'
+        },
+        {
+            id: 2482,
+            qty: [7, 15, 23, 42],
+            diameter: '0.5mm',
+            type: 'ANY',
+            dopant: 'Undoped',
+            orien: '<111>',
+            res: '50',
+            thick: '280',
+            grade: 'MECH',
+            polish: 'E/E',
             leadTime: '1 week',
             quantity: '25',
             one_unit_price: '300$',
@@ -194,11 +482,21 @@ $(document).ready(function () {
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
     CreateTickedSlider($('.type-filter'), 0, typeArray);
     CreateTickedSlider($('.orientation-filter'), 0, orientationArray);
-    CreateItems(itemsData)
-    hideFilters()
+    CreateItems(itemsData, $('#all'));
+    filterItems();
+    onchangeFunctions();
+    hideFilters();
     keyUpFunctions ();
     clickFunctions();
-    $('#all').DataTable();
+    /*$('#all').DataTable({
+        "initComplete": function () {
+            filterItems();
+        },
+        "rowCallback": function () {
+            filterItems();
+        }
+    });*/
+    $('#all_wrapper').addClass('tab-pane fade show active goods-table').attr('id', 'lall').attr('role', 'tabpanel').attr('aria-labelledby', 'all-tab');
 });
 /*function CreateShapeFilter(array) {
     $.each(array, function (i, val) {
@@ -221,11 +519,11 @@ $(document).ready(function () {
         `);
     });
 }*/
-function CreateItems (object) {
+function CreateItems (object, item) {
     $.each(object, function(i, e){
         var count = i;
-        $('.body-goods').append(`
-        <tr class="body-item body_item_`+i+`" data-id="`+e.id+`" data-diameter="`+e.diameter+`" data-type="`+e.type+`" data-dopant="`+e.dopant+`" data-orientation="`+e.orien+`" data-res="`+e.res+`" data-thickness="`+e.thick+`">
+        $(item).find('.body-goods').append(`
+        <tr class="body-item body_item_`+i+`" data-id="`+e.id+`" data-grade="`+e.grade+`" data-polish="`+e.polish+`" data-diameter="`+e.diameter+`" data-type="`+e.type+`" data-dopant="`+e.dopant+`" data-orientation="`+e.orien+`" data-res="`+e.res+`" data-thickness="`+e.thick+`">
             <td class="body-good qty-des">
                 <select name="qty"></select>
                 <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
@@ -245,6 +543,12 @@ function CreateItems (object) {
             <td class="body-good">
                  `+e.orien+`
             </td>
+            <td class="body-good">
+                 `+e.grade+`
+            </td>
+            <td class="body-good">
+                `+e.polish+`
+        </td>
             <td class="body-good">
                  `+e.res+`
             </td>
@@ -292,7 +596,46 @@ function CreateItems (object) {
     });
 }
 function filterItems () {
+    let TYPE_VALUES = [],
+        GRADE_VALUES = [],
+        POLISH_VALUES = [],
+        DOPANT_VALUES = [],
+        ORIENTATION_VALUES = [],
+        DIAMETER_VALUE = $('.diameter-filter').find('select').children('option:selected').val(),
+        THICKNESS_VALUE = $('.thickness-filter').find('select').children('option:selected').val(),
+        RESISTIVITY_VALUES = [$('.res-filter').find('.slider').slider("values", 0) , $('.res-filter').find('.slider').slider("values", 1)];
 
+
+    $('.type-filter').find('.slider-value:not(.unselected)').each(function(i, elem){
+        TYPE_VALUES.push($(elem).text())
+    });
+    $('.grade-filter').find('.slider-value:not(.unselected)').each(function(i, elem){
+        GRADE_VALUES.push($(elem).text())
+    });
+    $('.polish-filter.toggled').find('.slider-value:not(.unselected)').each(function(i, elem){
+        POLISH_VALUES.push($(elem).text())
+    });
+    $('.dopant-filter.toggled').find('.slider-value:not(.unselected)').each(function(i, elem){
+        DOPANT_VALUES.push($(elem).text())
+    });
+    $('.orientation-filter.toggled').find('.slider-value:not(.unselected)').each(function(i, elem){
+        ORIENTATION_VALUES.push($(elem).text())
+    });
+    console.log(DIAMETER_VALUE)
+    $('.body-item').each(function(i, elem){
+        if (!TYPE_VALUES.includes($(elem).attr('data-type')) ||
+            !GRADE_VALUES.includes($(elem).attr('data-grade')) ||
+            (!POLISH_VALUES.includes($(elem).attr('data-polish')) && $('.polish-filter').hasClass('toggled')) ||
+            (!DOPANT_VALUES.includes($(elem).attr('data-dopant')) && $('.dopant-filter').hasClass('toggled')) ||
+            (!ORIENTATION_VALUES.includes($(elem).attr('data-orientation'))  && $('.orientation-filter').hasClass('toggled')) ||
+            $(elem).attr('data-diameter') !== DIAMETER_VALUE ||
+            ($(elem).attr('data-thickness') !== THICKNESS_VALUE && $('.thickness-filter').hasClass('toggled')) ||
+            (($(elem).attr('data-res') < RESISTIVITY_VALUES[0] || $(elem).attr('data-res') > RESISTIVITY_VALUES[1]) && $('.res-filter').hasClass('toggled'))) {
+                $(elem).hide()
+            } else {
+                $(elem).show()
+            }
+    });
 }
 function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.slider').slider({
@@ -309,6 +652,7 @@ function CreateSlider(element, minimum, maximum, txt) {
                 $(element).addClass('toggled');
                  $(element).find('.toggle-button-space').addClass('toggled')
             }
+            filterItems ();
         }
     });
     $(element).find('.minValue').val(txt + $(element).find('.slider').slider("values", 0));
@@ -351,6 +695,7 @@ function CreateTickedSlider(element, minimum, array) {
                     $(element).addClass('toggled');
                      $(element).find('.toggle-button-space').addClass('toggled')
                 }
+                filterItems ()
             }
         }
     });
@@ -377,7 +722,11 @@ function keyUpFunctions () {
         $(this).parent().next().slider('values',1,$(this).val());
     });
 }
-
+function onchangeFunctions() {
+    $('.diameter-filter, .thickness-filter').find('select').on('change', function(){
+        filterItems ()
+    });
+}
 function clickFunctions() {
     $('.slider-value').on('click', function(){
             $(this).parent().next().slider('values',0, $(this).attr('data-count'))
@@ -394,7 +743,8 @@ function clickFunctions() {
     });
     $('.toggle-button-space').on('click', function(){
         $(this).toggleClass('toggled');
-        $(this).parent().parent().parent().toggleClass('toggled')
+        $(this).parent().parent().parent().toggleClass('toggled');
+        filterItems ()
     });
 }
 function makeSelect(array, element) {
@@ -442,7 +792,6 @@ function Menu(array) {
 
     }
     for(i=1; i<= array.length; i++) {
-        console.log(i)
         if (i == 1) {
             $('.menu-table').append('<div class="column"><ul></ul></div>');
         } else if (i % 16 === 0) {
