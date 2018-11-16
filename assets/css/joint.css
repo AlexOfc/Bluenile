@@ -131,10 +131,14 @@ h6, .h6 {
     height: 34px;
     line-height: 34px;
 }
+.top-bar-right-block {
+    font-size: 0
+}
 .top-bar-left-block a, .top-bar-right-block > * {
     display: inline-block;
     margin-right: 8px;
     margin-left: 8px;
+    font-size: 14px
 }
 .separator {
     margin: 0!important;
@@ -149,8 +153,51 @@ h6, .h6 {
     vertical-align: text-bottom;
     width: 1px;
 }
+.country-block:before, .country-block:after {
+    background-color: #100E31;
+    position: relative;
+    content: "";
+    display: inline-block;
+    height: 1.07143em;
+    margin: 0 1px;
+    vertical-align: text-bottom;
+    width: 1px;
+}
 .country-block {
     display: inline-block;
+    margin: 0
+}
+.country-block > button {
+    margin: 0 8px
+}
+.country-block.show{
+    background: #D5D7D8
+}
+.country-block.show:before, .country-block.show:after {
+    background-color: #D5D7D8;
+}
+#change-location-window {
+    top: 85%;
+    right: 0;
+    left: auto;
+    border: 0;
+    background-color: #D5D7D8;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+    border-radius: 0px;
+    width: 255px;
+    padding: 10px;
+}
+.language-header > i {
+    float: left;
+    height: 38px;
+    margin-right: 8px;
+    font-size: 17px;
+}
+.language-header > span {
+    line-height: 19px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 0.44px;
 }
 .horizontal-separator {
     clear: both;
@@ -281,6 +328,7 @@ h6, .h6 {
     transition-timing-function: ease-out;
     transition-duration: .5s;
     transition-property: max-height;
+    z-index: 100
 }
 .mega-drop-down.active {
     max-height: 450px;
@@ -291,6 +339,7 @@ h6, .h6 {
     height: auto;
     bottom: 0;
     border-right: 1px solid #F6F6F6;
+    background: #fff
 }
 .menu-table {
     display: table;
@@ -335,6 +384,42 @@ h6, .h6 {
 .mega-drop-down .mega-menu-astor-section a .text p+p+p {
     margin-top: 20px;
     text-decoration: underline;
+}
+.mega-menu-engagement a .text {
+    color: #ffffff;
+    text-transform: none;
+    font-size: 20px;
+    font-family: "VerlagBook",Arial,Helvetica,sans-serif;
+    letter-spacing: 1px;
+    line-height: 26px;
+    position: absolute;
+    top: 26px;
+    left: 88px;
+    text-align: left;
+}
+.mega-menu-engagement {
+    position: absolute;
+    bottom: 0;
+    right: 0
+}
+.mega-menu-engagement a img {
+    width: 200px;
+    height: 130px;
+    display: block;
+    border: 1px solid #979797;
+}
+.mega-menu-engagement a {
+    display: block;
+}
+.mega-menu-engagement a .text p {
+    margin: 0
+}
+.mega-menu-engagement a .text p+p+p {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-family: "VerlagBold",Arial,Helvetica,sans-serif;
+    text-decoration: none;
 }
 .cta {
     font-family: VerlagBold,Arial,Verdana,sans-serif;
@@ -615,9 +700,12 @@ h6, .h6 {
     width: .62em;
     height: .26em
 }
+.no-wrap {
+    white-space: nowrap;
+}
 .mega-drop-down a.view-all-link {
     color: #100E31;    
-    padding: 0 24px 20px;
+    padding: 0 24px 15px;
     text-transform: capitalize;
     display: block;
     font-size: 14px;
@@ -667,6 +755,7 @@ h6, .h6 {
     top: auto!important;
     z-index: auto;
     padding-top: 24px;
+    padding-bottom: 20px;
 }
 .slider-wrapper .slider>.range {
     height: 18px;
@@ -745,11 +834,6 @@ h6, .h6 {
 }
 .filter-info>.cell.right {
     display: none;
-}
-.filter-info>.cell.middle {
-    vertical-align: middle;
-    text-align: left;
-    padding-left: 10px
 }
 .icon-component {
     display: inline-block;

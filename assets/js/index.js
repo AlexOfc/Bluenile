@@ -4,17 +4,82 @@ let selectElem = document.getElementById("shipping-country");
 let cutArray = ['Good', 'Very Good', 'Ideal', 'Astor Ideal'];
 let colorArray = ['J', 'I', 'H', 'G', 'F', 'E', 'D'];
 let clarityArray = ['SI2', 'SI1', 'VS2', 'VS1', 'VVS2', 'VVS1', 'IF', 'FL',]
+let shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire']
 
+let shapeData = [
+    {
+        name: 'Round',
+        prefix: 'RD'
+    },
+    {
+        name: 'Princess',
+        prefix: 'PR'
+    },
+    {
+        name: 'Emerald',
+        prefix: 'EC'
+    },
+    {
+        name: 'Asscher',
+        prefix: 'AS'
+    },
+    {
+        name: 'Cushion',
+        prefix: 'CU'
+    },
+    {
+        name: 'Marquise',
+        prefix: 'MQ'
+    },
+    {
+        name: 'Radiant',
+        prefix: 'RA'
+    },
+    {
+        name: 'Oval',
+        prefix: 'OV'
+    },
+    {
+        name: 'Pear',
+        prefix: 'PS'
+    },
+    {
+        name: 'Heart',
+        prefix: 'HS'
+    }
+]
 //Executing functions
 $(document).ready(function () {    
     makeSelect(country_list, selectElem); 
     Menu();
+    CreateShapeFilter(shapeData);
     CreateSlider($('.price-filter'), 0, 1000, '$');
     CreateSlider($('.carat-filter'), 0, 1000, '');
     CreateTickedSlider($('.cut-filter'), 0, 4, cutArray);
     CreateTickedSlider($('.color-filter'), 0, 7, colorArray);
     CreateTickedSlider($('.clarity-filter'), 0, 8, clarityArray);
 });
+function CreateShapeFilter (array) {
+    $.each(array, function(i, val) {
+        $('.shape-cont').append(`
+            <div class="shape-filter-button">
+            <div class="shape-filter-label-container">
+                <div class="bn-checkbox">
+                    <div class="checkbox-container">
+                        <input type="checkbox">
+                        <label for="has-visualization-filter" class="new-checkbox"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-filter-button-label">`+val.name+`</div>
+            <div class="shape-filter-button-inner">
+                <div class="shape-filter-icon diamond-search-sprite `+val.prefix+`"></div>
+                <div class="small-shape-filter-icon diamond-search-sprite `+val.prefix+`"></div>
+            </div>
+        </div>
+        `);
+    });
+}
 function CreateSlider (element, minimum, maximum, txt) {
     $(element).find('.slider').slider({
         range:true,
@@ -61,7 +126,7 @@ function CreateTickedSlider (element, minimum, maximum, array) {
         }
     });
     for (i = 1; i < $(element).find('.slider-value').length; i++) {
-        console.log(i)
+
         $(element).find('.slider').append('<div class="option-mark"></div>')
     }
     $(element).find('.option-mark').each(function(i, e) {
@@ -69,7 +134,6 @@ function CreateTickedSlider (element, minimum, maximum, array) {
     })
     
     $(element).find('.slider-value').each(function(i, el){
-        console.log($(el).attr('data-count') ,$(element).find('.slider').slider( "values", 0 ))
         if ($(el).attr('data-count') < $(element).find('.slider').slider( "values", 0 ) || $(el).attr('data-count') >= $(element).find('.slider').slider( "values", 1 )) {
             $(el).addClass('unselected')
         }
@@ -86,6 +150,7 @@ function makeSelect (array, element) {
     });
 }
 function Menu () {
+   
     "use strict";
     function r() {
         if ($(".selected-segment").length) {
@@ -130,7 +195,6 @@ function Menu () {
         });
         
     }
-    $(window).on('load', function() {
         addColumn();
         $(".selected-segment").length && $("#navigation-menu").addClass("selected-segment-active"),
         r(),
@@ -151,5 +215,5 @@ function Menu () {
         $("#navigation-menu:not(.selected-segment-active)").on("mouseleave", function() {
             s()
         })))
-    })
+  
 }
