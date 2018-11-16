@@ -727,7 +727,6 @@ h6, .h6 {
     position: relative;
     top: auto!important;
     z-index: auto;
-    padding-top: 24px;
     padding-bottom: 20px;
     overflow: hidden
 }
