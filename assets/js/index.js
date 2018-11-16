@@ -380,7 +380,8 @@ function clickFunctions() {
         }
     });
     $('.toggle-button-space').on('click', function(){
-        
+        $(this).toggleClass('toggled');
+        $(this).parent().parent().parent().toggleClass('toggled')
     });
 }
 function makeSelect(array, element) {

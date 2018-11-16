@@ -163,6 +163,12 @@ h6, .h6 {
     vertical-align: text-bottom;
     width: 1px;
 }
+.filter-toggling:not(.toggled) .slider-value{
+    color:#d5d7d8
+}
+.filter-toggling:not(.toggled) .ui-slider-range {
+    background: #d5d7d8
+}
 .country-block {
     display: inline-block;
     margin: 0
@@ -1318,7 +1324,7 @@ h6, .h6 {
 #itemsTab li:first-child {
     margin-left: 20px;
 }
-.toggle-button {
+.toggle-button-space {
     cursor: pointer;
     display: inline-block;
     height: 24px;
@@ -1332,7 +1338,7 @@ h6, .h6 {
     position: relative;
     width: 43px;
 }
-.toggle-button.toggled .toggle-button-background {
+.toggle-button-space.toggled .toggle-button-background {
     background-color: #100e31;
 }
 .toggle-button-switch {
@@ -1346,4 +1352,8 @@ h6, .h6 {
     left: 2px;
     -webkit-transition: left .25s;
     transition: left .25s;
+    cursor: pointer;
+}
+.toggle-button-space.toggled .toggle-button-background .toggle-button-switch {
+    left: 22px;
 }
