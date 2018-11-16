@@ -59,9 +59,9 @@ $(document).ready(function () {
     Menu(shapesNames);
     //CreateShapeFilter(shapeData);
     CreateSlider($('.price-filter'), 0, 1000, '$');
+    CreateResSlider($('.res-filter'), 0, 75, '');
     CreateDropdownFilter($('.shape-filter'), diameterData);
     CreateTickedSlider($('.cut-filter'), 0, dopantArray);
-    CreateTickedSlider($('.res-filter'), 0, resgradeArray);
     CreateTickedSlider($('.grade-filter'), 0, gradeArray);
     CreateTickedSlider($('.polish-filter'), 0, polishArray);
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
@@ -95,6 +95,23 @@ function CreateSlider(element, minimum, maximum, txt) {
         min: minimum,
         max: maximum,
         values: [minimum, maximum],
+        slide: function (event, ui) {
+            $(element).find('.minValue').val(txt + ui.values[0]);
+            $(element).find('.maxValue').val(txt + ui.values[1]);
+            $(element).find('.range').text('(' + txt + ui.values[0] + ' - ' + txt + ui.values[1] + ')')
+        }
+    });
+    $(element).find('.minValue').val(txt + $(element).find('.slider').slider("values", 0));
+    $(element).find('.maxValue').val(txt + $(element).find('.slider').slider("values", 1));
+    $(element).find('.range').text('(' + txt + $(element).find('.slider').slider("values", 0) + ' - ' + txt + $(element).find('.slider').slider("values", 1) + ')')
+}
+function CreateResSlider(element, minimum, maximum, txt) {
+    $(element).find('.slider').slider({
+        range: true,
+        min: minimum,
+        max: maximum,
+        values: [minimum, maximum],
+        step: 0.005,
         slide: function (event, ui) {
             $(element).find('.minValue').val(txt + ui.values[0]);
             $(element).find('.maxValue').val(txt + ui.values[1]);
