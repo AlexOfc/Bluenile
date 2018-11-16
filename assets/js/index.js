@@ -379,6 +379,9 @@ function clickFunctions() {
             $(this).html('More filters <i class="fa fa-angle-down"></i>')
         }
     });
+    $('.toggle-button-space').on('click', function(){
+        
+    });
 }
 function makeSelect(array, element) {
     let option;
