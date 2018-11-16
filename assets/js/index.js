@@ -13,6 +13,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
     diameterData = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     itemsData = [
         {
+            id: 1,
             qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
@@ -20,6 +21,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             orien: '<111>',
             res: '>50',
             thick: '100$',
+            leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
@@ -32,6 +34,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             description: 'P type ( Gallium doped)'
         },
         {
+            id: 2,
             qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
@@ -39,6 +42,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             orien: '<111>',
             res: '>50',
             thick: '100$',
+            leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
@@ -51,6 +55,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             description: 'P type ( Gallium doped)'
         },
         {
+            id: 3,
             qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
@@ -58,6 +63,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             orien: '<111>',
             res: '>50',
             thick: '100$',
+            leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
@@ -70,6 +76,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             description: 'P type ( Gallium doped)'
         },
         {
+            id: 4,
             qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
@@ -77,6 +84,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             orien: '<111>',
             res: '>50',
             thick: '100$',
+            leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
@@ -89,6 +97,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             description: 'P type ( Gallium doped)'
         },
         {
+            id: 1156,
             qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
@@ -96,6 +105,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             orien: '<111>',
             res: '>50',
             thick: '100$',
+            leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
@@ -108,6 +118,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             description: 'P type ( Gallium doped)'
         },
         {
+            id: 2482,
             qty: [7, 15, 23, 42],
             diameter: '100mm',
             type: 'Undoped',
@@ -115,6 +126,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             orien: '<111>',
             res: '>50',
             thick: '100$',
+            leadTime: '1 week',
             quantity: '25',
             one_unit_price: '100$',
             five_unit_price: '100$',
@@ -218,6 +230,9 @@ function CreateItems (object) {
                 <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
             </div>
             <div class="body-good">
+                 `+e.id+`
+            </div>
+            <div class="body-good">
                  `+e.diameter+`
             </div>
             <div class="body-good">
@@ -234,6 +249,9 @@ function CreateItems (object) {
             </div>
             <div class="body-good">
                  `+e.thick+`
+            </div>
+            <div class="body-good">
+                 `+e.leadTime+`
             </div>
             <div class="body-good">
                  `+e.quantity+`
@@ -353,7 +371,7 @@ function clickFunctions() {
       
     });
     $('.all-filters span').on('click', function() {
-        $('.filters-body').children('.filter-container:gt(5)').slideToggle(350);
+        $('.filters-body').children('.filter-container:gt(2)').slideToggle(350);
         $(this).toggleClass('shown');
         if ($(this).hasClass('shown')) {
             $(this).html('Fewer filters <i class="fa fa-angle-up"></i>')
@@ -372,7 +390,7 @@ function makeSelect(array, element) {
     });
 }
 function hideFilters() {
-    $('.filters-body').children('.filter-container:gt(5)').hide();
+    $('.filters-body').children('.filter-container:gt(2)').hide();
 }
 function Menu(array) {
     "use strict";
