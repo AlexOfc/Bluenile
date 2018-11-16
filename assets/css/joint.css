@@ -324,6 +324,9 @@ h6, .h6 {
     max-height: 450px;
     box-shadow: 0 2px 2px 2px rgba(0,0,0,0.2)
 }
+.res-filter {
+    margin-top: 20px
+}
 .mega-content {
     display: block;
     height: auto;
@@ -333,7 +336,7 @@ h6, .h6 {
 }
 .menu-table {
     display: table;
-    padding: 12px 24px 0;
+    padding: 12px 24px;
 }
 .diamonds .first.column .headline {
     padding-bottom: 5px;
@@ -726,6 +729,7 @@ h6, .h6 {
     z-index: auto;
     padding-top: 24px;
     padding-bottom: 20px;
+    overflow: hidden
 }
 .slider-wrapper .slider>.range {
     height: 18px;
@@ -1235,4 +1239,22 @@ h6, .h6 {
 }
 .dropdown-selector:focus {
     outline: none
+}
+.all-filters {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+.all-filters span {
+    height: 40px;
+    width: 117px;
+    color: #fff;
+    background: #100e31;
+    border: 1px solid #100e31;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    line-height: 40px;
+    cursor: pointer;
 }

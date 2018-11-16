@@ -58,8 +58,7 @@ $(document).ready(function () {
     makeSelect(country_list, selectElem);
     Menu(shapesNames);
     //CreateShapeFilter(shapeData);
-    CreateSlider($('.price-filter'), 0, 1000, '$');
-    CreateResSlider($('.res-filter'), 0, 75, '');
+    CreateSlider($('.res-filter'), 0, 75, '');
     CreateDropdownFilter($('.shape-filter'), diameterData);
     CreateTickedSlider($('.cut-filter'), 0, dopantArray);
     CreateTickedSlider($('.grade-filter'), 0, gradeArray);
@@ -67,6 +66,9 @@ $(document).ready(function () {
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
     CreateTickedSlider($('.type-filter'), 0, typeArray);
     CreateTickedSlider($('.orientation-filter'), 0, orientationArray);
+    hideFilters()
+    keyUpFunctions ();
+    clickFunctions()
 });
 /*function CreateShapeFilter(array) {
     $.each(array, function (i, val) {
@@ -89,23 +91,8 @@ $(document).ready(function () {
         `);
     });
 }*/
+
 function CreateSlider(element, minimum, maximum, txt) {
-    $(element).find('.slider').slider({
-        range: true,
-        min: minimum,
-        max: maximum,
-        values: [minimum, maximum],
-        slide: function (event, ui) {
-            $(element).find('.minValue').val(txt + ui.values[0]);
-            $(element).find('.maxValue').val(txt + ui.values[1]);
-            $(element).find('.range').text('(' + txt + ui.values[0] + ' - ' + txt + ui.values[1] + ')')
-        }
-    });
-    $(element).find('.minValue').val(txt + $(element).find('.slider').slider("values", 0));
-    $(element).find('.maxValue').val(txt + $(element).find('.slider').slider("values", 1));
-    $(element).find('.range').text('(' + txt + $(element).find('.slider').slider("values", 0) + ' - ' + txt + $(element).find('.slider').slider("values", 1) + ')')
-}
-function CreateResSlider(element, minimum, maximum, txt) {
     $(element).find('.slider').slider({
         range: true,
         min: minimum,
@@ -123,7 +110,6 @@ function CreateResSlider(element, minimum, maximum, txt) {
     $(element).find('.range').text('(' + txt + $(element).find('.slider').slider("values", 0) + ' - ' + txt + $(element).find('.slider').slider("values", 1) + ')')
 }
 function CreateDropdownFilter(element, array) {
-
     $.each(array, function (i, e) {
         $(element).find('.dropdown-selector').append('<option value="'+ e + '">' + e + '</div>');
     });
@@ -173,6 +159,29 @@ function CreateTickedSlider(element, minimum, array) {
     });
 
 }
+function keyUpFunctions () {
+    $(".minValue").change(function() {
+        $(this).parent().next().slider('values',0,$(this).val());
+    });
+    $(".maxValue").change(function() {
+        $(this).parent().next().slider('values',1,$(this).val());
+    });
+}
+function clickFunctions() {
+    $('.slider-value').on('click', function(){
+            $(this).parent().next().slider('values',0, $(this).attr('data-count'))
+      
+    });
+    $('.all-filters span').on('click', function() {
+        $('.filters-body').children('.filter-container:gt(5)').slideToggle(350);
+        $(this).toggleClass('shown');
+        if ($(this).hasClass('shown')) {
+            $(this).html('Fewer filters <i class="fa fa-angle-up"></i>')
+        } else {
+            $(this).html('More filters <i class="fa fa-angle-down"></i>')
+        }
+    });
+}
 function makeSelect(array, element) {
     let option;
     array.forEach(function (el, i) {
@@ -181,6 +190,9 @@ function makeSelect(array, element) {
         if (option.text == "Australia") option.selected = true;
         element.appendChild(option);
     });
+}
+function hideFilters() {
+    $('.filters-body').children('.filter-container:gt(5)').hide();
 }
 function Menu(array) {
     "use strict";

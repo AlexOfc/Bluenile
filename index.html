@@ -42,24 +42,24 @@
                         </a>
                     </div>
                     <div class="top-bar-center-block">
-                            <nav id="navigation-menu">
-                                    <div class="navigation-bar options">
-                                        <div class="segment diamonds" data-segment="diamonds">
-                                            <a href="javascript:void(0)">
-                                                <span class="link-text">Material Category</span>
-                                            </a>
-                                            <div class="mega-drop-down">
-                                                <div class="mega-content">
-                                                    <div class="menu-table">
-                                                        
-                                                    </div>
-                                                    
-                                                </div>
+                        <nav id="navigation-menu">
+                            <div class="navigation-bar options">
+                                <div class="segment diamonds" data-segment="diamonds">
+                                    <a href="javascript:void(0)">
+                                        <span class="link-text">Material Category</span>
+                                    </a>
+                                    <div class="mega-drop-down">
+                                        <div class="mega-content">
+                                            <div class="menu-table">
+
                                             </div>
-                                        </div>                        
+
+                                        </div>
                                     </div>
-                
-                                </nav>
+                                </div>
+                            </div>
+
+                        </nav>
                     </div>
                     <div class="top-bar-right-block">
                         <span class="sign-in">
@@ -74,7 +74,8 @@
                             </a>
                         </span>
                         <div class="country-block">
-                            <button id="dropdownMenuButton" class="dropdown-toggle actionbar-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button id="dropdownMenuButton" class="dropdown-toggle actionbar-button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 <img src="https://bnsec.bluenile.com/bnsecure/assets/phablet/international/flags/USA.png"
                                     alt="USA">
                                 <span>English, USA</span>
@@ -134,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </header>
             <section class="searchbody">
                 <div class="filters">
@@ -148,7 +149,7 @@
                     </div>
                     <div class="filters-backdrop"></div>
                     <div class="filters-body clearfix d-flex flex-wrap">
-                        <div class="filter-container shape-filter col-md-4">
+                        <div class="filter-container shape-filter col-md-12">
                             <div class="filter-info d-flex align-items-center no-pb">
                                 <h3 class="left cell">
                                     Diameter
@@ -159,16 +160,18 @@
                                 </div>
                             </div>
                             <div class="filter-content">
-                               <!-- <div class="shape-filter shape-cont d-flex flex-wrap"></div> -->
-                               <select class="form-control dropdown-selector">
+                                <!-- <div class="shape-filter shape-cont d-flex flex-wrap"></div> -->
+                                <select class="form-control dropdown-selector">
 
                                 </select>
                             </div>
                         </div>
-                        <div class="filter-container price-filter col-md-4">
-                            <div class="filter-info d-flex align-items-center">
+
+
+                        <div class="filter-container cut-filter col-md-12">
+                            <div class="filter-info d-flex align-items-center no-pb">
                                 <h3 class="left cell">
-                                    Price
+                                    Dopant
                                     <span class="range"></span>
                                 </h3>
                                 <div class="right cell">
@@ -177,15 +180,83 @@
                             </div>
                             <div class="filter-content">
                                 <div class="slider-wrapper">
-                                    <div class="slider-inputs clearfix">
-                                        <input type="text" class="minValue">
-                                        <input type="text" class="maxValue">
-                                    </div>
-                                    <div class="slider"></div>
+                                    <div class="slider-values"></div>
+                                    <div class="slider less"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="filter-container res-filter col-md-4">
+
+                        <div class="filter-container orientation-filter col-md-12">
+                            <div class="filter-info d-flex align-items-center no-pb">
+                                <h3 class="left cell">
+                                    Orientation
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                    <div class="slider-values"></div>
+                                    <div class="slider less"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-container type-filter col-md-12">
+                            <div class="filter-info d-flex align-items-center no-pb">
+                                <h3 class="left cell">
+                                    Type
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                    <div class="slider-values"></div>
+                                    <div class="slider less"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container polish-filter col-md-12">
+                            <div class="filter-info d-flex align-items-center no-pb">
+                                <h3 class="left cell">
+                                    Polish
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                    <div class="slider-values"></div>
+                                    <div class="slider less"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-container grade-filter col-md-12">
+                            <div class="filter-info d-flex align-items-center no-pb">
+                                <h3 class="left cell">
+                                    Grade
+                                    <span class="range"></span>
+                                </h3>
+                                <div class="right cell">
+                                    <i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>
+                            <div class="filter-content">
+                                <div class="slider-wrapper">
+                                    <div class="slider-values"></div>
+                                    <div class="slider less"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-container res-filter col-md-6">
                             <div class="filter-info d-flex align-items-center">
                                 <h3 class="left cell">
                                     Resistivity
@@ -205,99 +276,33 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="filter-container cut-filter col-md-12">
+                        <div class="filter-container thickness-filter col-md-6">
                             <div class="filter-info d-flex align-items-center no-pb">
                                 <h3 class="left cell">
-                                    Dopant
-                                    <span class="range"></span>
+                                    Thickness
+                                    <span class="range"> (2)</span>
                                 </h3>
                                 <div class="right cell">
                                     <i class="fa fa-angle-down"></i>
                                 </div>
                             </div>
                             <div class="filter-content">
-                                    <div class="slider-wrapper">
-                                        <div class="slider-values"></div>
-                                        <div class="slider less"></div>
-                                    </div>
-                                </div>
-                        </div>
-                       
-                        <div class="filter-container orientation-filter col-md-12">
-                            <div class="filter-info d-flex align-items-center no-pb">
-                                <h3 class="left cell">
-                                    Orientation
-                                    <span class="range"></span>
-                                </h3>
-                                <div class="right cell">
-                                    <i class="fa fa-angle-down"></i>
-                                </div>
+
+                                <select class="form-control dropdown-selector">
+
+                                </select>
                             </div>
-                            <div class="filter-content">
-                                    <div class="slider-wrapper">
-                                        <div class="slider-values"></div>
-                                        <div class="slider less"></div>
-                                    </div>
-                                </div>
                         </div>
-                        
-                            <div class="filter-container type-filter col-md-12">
-                                    <div class="filter-info d-flex align-items-center no-pb">
-                                        <h3 class="left cell">
-                                            Type
-                                            <span class="range"></span>
-                                        </h3>
-                                        <div class="right cell">
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                    </div>
-                                    <div class="filter-content">
-                                        <div class="slider-wrapper">
-                                            <div class="slider-values"></div>
-                                            <div class="slider less"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="filter-container polish-filter col-md-12">
-                                    <div class="filter-info d-flex align-items-center no-pb">
-                                        <h3 class="left cell">
-                                            Polish
-                                            <span class="range"></span>
-                                        </h3>
-                                        <div class="right cell">
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                    </div>
-                                    <div class="filter-content">
-                                        <div class="slider-wrapper">
-                                            <div class="slider-values"></div>
-                                            <div class="slider less"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="filter-container grade-filter col-md-12">
-                                        <div class="filter-info d-flex align-items-center no-pb">
-                                            <h3 class="left cell">
-                                                Grade
-                                                <span class="range"></span>
-                                            </h3>
-                                            <div class="right cell">
-                                                <i class="fa fa-angle-down"></i>
-                                            </div>
-                                        </div>
-                                        <div class="filter-content">
-                                            <div class="slider-wrapper">
-                                                <div class="slider-values"></div>
-                                                <div class="slider less"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="all-filters">
+                            <span>
+                               More filters <i class="fa fa-angle-down"></i>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </section>
             <footer>
-             </footer>
+            </footer>
         </div>
     </div>
     </div>
