@@ -784,9 +784,13 @@ h6, .h6 {
     margin-top: 30px;
    
 }
-.cut-filter .slider-wrapper .slider, .color-filter .slider-wrapper .slider, .clarity-filter .slider-wrapper .slider {
+.cut-filter .slider-wrapper .slider, .color-filter .slider-wrapper .slider, .orientation-filter .slider-wrapper .slider {
     background: #d5d7d8;
     margin-top: 15px
+}
+.cut-filter .filter-info, .color-filter .filter-info, .orientation-filter .filter-info {
+ padding-top: 20px;
+ padding-bottom: 0
 }
 .slider-wrapper .slider-inputs>input {
     width: 130px;

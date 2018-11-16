@@ -1,9 +1,9 @@
 // Variables and data
 let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'China', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece']
 let selectElem = document.getElementById("shipping-country");
-let cutArray = ['Good', 'Very Good', 'Ideal', 'Astor Ideal'];
-let colorArray = ['J', 'I', 'H', 'G', 'F', 'E', 'D'];
-let clarityArray = ['SI2', 'SI1', 'VS2', 'VS1', 'VVS2', 'VVS1', 'IF', 'FL',]
+let cutArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'];
+let colorArray = ['P', 'N', 'ANY', 'Undoped'];
+let orientationArray = ['<0001>', '<100>', '<110>', '<111>', 'ANY', 'N/A', '<510>', '<112>', '<113>', '<557>', '<111B>', '<111A>', '<1-102>', 'ST-cut', 'X-cut', 'Y-cut', 'Y-X-cut', 'Z-cut', 'AT-cut', '<11-20>', '<111-4°>', '<111-3°>']
 let shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire']
 
 let shapeData = [
@@ -55,9 +55,9 @@ $(document).ready(function () {
     CreateShapeFilter(shapeData);
     CreateSlider($('.price-filter'), 0, 1000, '$');
     CreateSlider($('.carat-filter'), 0, 1000, '');
-    CreateTickedSlider($('.cut-filter'), 0, 4, cutArray);
-    CreateTickedSlider($('.color-filter'), 0, 7, colorArray);
-    CreateTickedSlider($('.clarity-filter'), 0, 8, clarityArray);
+    CreateTickedSliderWithoutOptions($('.cut-filter'), 0, cutArray);
+    CreateTickedSlider($('.color-filter'), 0, colorArray);
+    CreateTickedSliderWithoutOptions($('.orientation-filter'), 0, orientationArray);
 });
 function CreateShapeFilter(array) {
     $.each(array, function (i, val) {
@@ -96,7 +96,36 @@ function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.maxValue').val(txt + $(element).find('.slider').slider("values", 1));
     $(element).find('.range').text('(' + txt + $(element).find('.slider').slider("values", 0) + ' - ' + txt + $(element).find('.slider').slider("values", 1) + ')')
 }
-function CreateTickedSlider(element, minimum, maximum, array) {
+function CreateTickedSliderWithoutOptions(element, minimum, array) {
+
+    $(element).find('.slider').slider({
+        range: true,
+        min: minimum,
+        max: array.length,
+        step: 1,
+        values: [minimum, array.length],
+        slide: function (event, ui) {
+            if (ui.values[1] - ui.values[0] < 1) {
+                return false;
+            }
+        }
+    });
+    for (i = 1; i < array.length; i++) {
+
+        $(element).find('.slider').append('<div class="option-mark"></div>')
+    }
+    $(element).find('.option-mark').each(function (i, e) {
+        $(e).css('left', (100 / Number($(element).find('.option-mark').length + 1)) * Number(i + 1) + '%')
+    })
+
+    $(element).find('.slider-value').each(function (i, el) {
+        if ($(el).attr('data-count') < $(element).find('.slider').slider("values", 0) || $(el).attr('data-count') >= $(element).find('.slider').slider("values", 1)) {
+            $(el).addClass('unselected')
+        }
+    });
+
+}
+function CreateTickedSlider(element, minimum, array) {
     $.each(array, function (i, e) {
         $(element).find('.slider-values').append('<div class="slider-value" data-count="' + i + '">' + e + '</div>');
     });
@@ -108,9 +137,9 @@ function CreateTickedSlider(element, minimum, maximum, array) {
     $(element).find('.slider').slider({
         range: true,
         min: minimum,
-        max: maximum,
+        max: array.length,
         step: 1,
-        values: [minimum, maximum],
+        values: [minimum, array.length],
         slide: function (event, ui) {
             if (ui.values[1] - ui.values[0] < 1) {
                 return false;
@@ -207,7 +236,8 @@ function Menu(array) {
             })) : ($(".segment").on("mouseover", function () {
                 c(this)
             }), $(".segment").on("mouseleave", function () {
-                    i(this)
+                $(".mega-drop-down").removeClass("active"),
+                $("#navigation-menu").removeClass("mega")
                 })
             ))
 
