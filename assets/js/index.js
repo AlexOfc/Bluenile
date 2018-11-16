@@ -59,7 +59,6 @@ $(document).ready(function () {
     Menu(shapesNames);
     //CreateShapeFilter(shapeData);
     CreateSlider($('.price-filter'), 0, 1000, '$');
-    CreateSlider($('.carat-filter'), 0, 1000, '');
     CreateDropdownFilter($('.shape-filter'), diameterData);
     CreateTickedSlider($('.cut-filter'), 0, dopantArray);
     CreateTickedSlider($('.res-filter'), 0, resgradeArray);
