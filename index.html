@@ -59,13 +59,12 @@
                     </div>
                     <div class="top-bar-right-block">
                         <div class="country-block">
-                            <button id="dropdownMenuButton" class="dropdown-toggle actionbar-button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <button id="dropdownMenuButton" class="actionbar-button" >
                                 <img src="https://bnsec.bluenile.com/bnsecure/assets/phablet/international/flags/USA.png"
                                     alt="USA">
                                 <span>English, USA</span>
                             </button>
-                            <ul id="change-location-window" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <ul id="change-location-window" aria-labelledby="dropdownMenuButton">
                                 <li class="language-header">
                                     <i class="fa fa-globe" aria-hidden="true"></i>
                                     <span>Please select your shipping destination & currency</span>
@@ -79,10 +78,29 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="language-section">
+                                            <label for="lang-section">Language:</label>
+                                            <div class="lang-container">
+                                                <div class="select-container">
+                                                    <div class="select-field"></div>
+                                                    <select name="country" id="lang-section" class="lang-country"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="currency-section">
+                                            <label for="cur-section">Currency:</label>
+                                            <div class="cur-container">
+                                                <div class="select-container">
+                                                    <div class="select-field"></div>
+                                                    <select name="country" id="cur-section" class="cur-country"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="wafers-button submit">
+                                            Submit
+                                        </button>
                                     </form>
                                 </li>
-                                <li></li>
-                                <li></li>
                             </ul>
                         </div>
                         <span class="sign-in">
@@ -534,6 +552,28 @@
 
 
             </footer>
+        </div>
+        <div class="mobile-menu-toggling">
+            
+            <div class="sign-in-mobile">
+                   <a href="javascript:void(0)">Sign In</a> 
+                </div>
+                <div class="lang-mobile">
+                    <span>English, USA</span> <img src="https://bnsec.bluenile.com/bnsecure/assets/phablet/international/flags/USA.png"
+                    alt="USA">
+                </div>
+                <div class="categories-mobile">
+                    <div class="open-mobile-cats">
+                        Categories <i class="fa fa-angle-down"></i>
+                    </div>
+                    <ul id="mobile-menu">
+                        
+                    </ul>
+                </div>
+            
+            <div class="lang-mobile">
+
+            </div>
         </div>
     </div>
     </div>

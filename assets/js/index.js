@@ -1,14 +1,18 @@
 // letiables and data
 let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'China', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece'],
-    selectElem = document.getElementById("shipping-country"),
+    currencies_list = ['USD', 'RUB', 'EUR'],
+    lang_list = ['English', 'Russian'],
+    langElem = document.getElementById("lang-section"),
+    currencyElem = document.getElementById("cur-section"),
+    countryElem = document.getElementById("shipping-country"),
     dopantArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'],
     typeArray = ['P', 'N', 'ANY', 'Undoped'],
     orientationArray = ['<0001>', '<100>', '<110>', '<111>', 'ANY', 'N/A', '<510>', '<112>', '<113>', '<557>', '<111B>', '<111A>', '<1-102>', 'ST-cut', 'X-cut', 'Y-cut', 'Y-X-cut', 'Z-cut', 'AT-cut', '<11-20>', '<111-4°>', '<111-3°>'],
     shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire'],
     diametersNames = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality'],
-    resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035];
-polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
+    resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035],
+    polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
     thicknessNames = ['280', '320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD'],
     diameterData = ['100mm', '0.5mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     itemsData = [
@@ -445,53 +449,13 @@ polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
             description: 'P type ( Gallium doped)'
         }
     ]
-/*let shapeData = [
-    {
-        name: 'Round',
-        prefix: 'RD'
-    },
-    {
-        name: 'Princess',
-        prefix: 'PR'
-    },
-    {
-        name: 'Emerald',
-        prefix: 'EC'
-    },
-    {
-        name: 'Asscher',
-        prefix: 'AS'
-    },
-    {
-        name: 'Cushion',
-        prefix: 'CU'
-    },
-    {
-        name: 'Marquise',
-        prefix: 'MQ'
-    },
-    {
-        name: 'Radiant',
-        prefix: 'RA'
-    },
-    {
-        name: 'Oval',
-        prefix: 'OV'
-    },
-    {
-        name: 'Pear',
-        prefix: 'PS'
-    },
-    {
-        name: 'Heart',
-        prefix: 'HS'
-    }
-]*/
+
 //Executing functions
 $(document).ready(function () {
-    makeSelect(country_list, selectElem);
+    makeSelect(country_list, countryElem);
+    makeSelect(currencies_list, currencyElem);
+    makeSelect(lang_list, langElem);
     Menu(shapesNames);
-    //CreateShapeFilter(shapeData);
     CreateSlider($('.res-filter'), 0, 75, '');
     CreateDropdownFilter($('.diameter-filter'), diameterData);
     CreateTickedSlider($('.dopant-filter'), 0, dopantArray);
@@ -518,15 +482,6 @@ $(document).ready(function () {
         resetFilter(defaulDiameter, defaultType, defaultGrade, defaultPolish, defaultDopant, defaultOrientation, defaultResistivity, defaultThickness);
         filterItems()
     });
-
-    /*$('#all').DataTable({
-        "initComplete": function () {
-            filterItems();
-        },
-        "rowCallback": function () {
-            filterItems();
-        }
-    });*/
     $('#all_wrapper').addClass('tab-pane fade show active goods-table').attr('id', 'lall').attr('role', 'tabpanel').attr('aria-labelledby', 'all-tab');
 });
 /*function CreateShapeFilter(array) {
@@ -813,6 +768,16 @@ function clickFunctions() {
         $(this).parent().parent().parent().toggleClass('toggled');
         filterItems()
     });
+    $('.actionbar-button').on('click', function() {
+        $('#change-location-window').toggleClass('shown')
+        $('.country-block').toggleClass('show')
+    });
+    $('.mobile-button-menu').on('click', function() {
+        $('.extra-wide-layout, .mobile-menu-toggling').toggleClass('moving');
+    });
+    $('.open-mobile-cats').on('click', function(){
+        $('.open-mobile-cats, #mobile-menu').toggleClass('opened')
+    });
 
 }
 function makeSelect(array, element) {
@@ -828,65 +793,70 @@ function hideFilters() {
     $('.filters-body').children('.filter-container:gt(2)').hide();
 }
 function Menu(array) {
-    "use strict";
-    function c(e) {
-        let t = $(e).position().left
-            , n = $(e).find(".link-text").position().left + t
-            , a = $(e).find(".link-text").width()
-            , r = $(".navigation-bar").width()
-            , c = $(e).find(".mega-content").outerHeight()
-            , i = r - $(e).find(".mega-drop-down").width() - t;
-        $(e).find(".mega-drop-down").addClass("active").css("height", c),
-            e.nextElementSibling ? e.previousElementSibling && e.previousElementSibling.hasAttribute("data-segment") || (i += 1) : i -= 1,
-            $("#navigation-menu").addClass("mega"),
-            i < 0 && $(e).find(".mega-drop-down").css("left", i / 2)
-    }
-    function i(e) {
-        $(".mega-drop-down").removeClass("active"),
-            $("#navigation-menu").removeClass("mega")
-    }
-    function l() {
-        $("#navigation-menu").find(".active").removeClass("active"),
-            $(".selected-segment").length
-    }
-    function addColumn() {
-        $('.menu-table .column').first().addClass('first');
-        $('.menu-table .column').last().addClass('last');
-        $('.menu-table .column li').each(function (i, elem) {
-            if ($(elem).children('ul').length > 0) {
-                $(elem).addClass('two-column-component')
+    if (window.innerWidth > 768) {
+        function c(e) {
+            let t = $(e).position().left
+                , n = $(e).find(".link-text").position().left + t
+                , a = $(e).find(".link-text").width()
+                , r = $(".navigation-bar").width()
+                , c = $(e).find(".mega-content").outerHeight()
+                , i = r - $(e).find(".mega-drop-down").width() - t;
+            $(e).find(".mega-drop-down").addClass("active").css("height", c),
+                e.nextElementSibling ? e.previousElementSibling && e.previousElementSibling.hasAttribute("data-segment") || (i += 1) : i -= 1,
+                $("#navigation-menu").addClass("mega"),
+                i < 0 && $(e).find(".mega-drop-down").css("left", i / 2)
+        }
+        function i(e) {
+            $(".mega-drop-down").removeClass("active"),
+                $("#navigation-menu").removeClass("mega")
+        }
+        function l() {
+            $("#navigation-menu").find(".active").removeClass("active"),
+                $(".selected-segment").length
+        }
+        function addColumn() {
+            $('.menu-table .column').first().addClass('first');
+            $('.menu-table .column').last().addClass('last');
+            $('.menu-table .column li').each(function (i, elem) {
+                if ($(elem).children('ul').length > 0) {
+                    $(elem).addClass('two-column-component')
+                }
+            });
+    
+        }
+        for (i = 1; i <= array.length; i++) {
+            if (i == 1) {
+                $('.menu-table').append('<div class="column"><ul></ul></div>');
+            } else if (i % 16 === 0) {
+                $('.menu-table').append('<div class="column"><ul></ul></div>');
+            } else {
+                $('.menu-table .column').last().append('<li><a href="javascript:void(0)">' + array[i - 1] + '</a></li>')
             }
-        });
-
-    }
-    for (i = 1; i <= array.length; i++) {
-        if (i == 1) {
-            $('.menu-table').append('<div class="column"><ul></ul></div>');
-        } else if (i % 16 === 0) {
-            $('.menu-table').append('<div class="column"><ul></ul></div>');
-        } else {
-            $('.menu-table .column').last().append('<li><a href="javascript:void(0)">' + array[i - 1] + '</a></li>')
+            if (i == array.length) {
+                $('.menu-table .column').last().remove()
+            }
         }
-        if (i == array.length) {
-            $('.menu-table .column').last().remove()
-        }
+        addColumn();
+        $(".selected-segment").length && $("#navigation-menu").addClass("selected-segment-active"),
+            $("#navigation-menu").length && (Modernizr.touch ? ($(".touch-header-link").removeClass("hidden"),
+                $(".segment").on("click", function (e) {
+                    $(this).find(".mega-drop-down").length && ($(this).find(".mega-drop-down").hasClass("active") ? (($(e.target).hasClass("link-text") || $(e.target).hasClass("label")) && e.preventDefault(),
+                        i(this),
+                        l()) : (e.preventDefault(),
+                            l(),
+                            $(this).addClass("active"),
+                            c(this)))
+                })) : ($(".segment").on("mouseover", function () {
+                    c(this)
+                }), $(".segment").on("mouseleave", function () {
+                    $(".mega-drop-down").removeClass("active"),
+                        $("#navigation-menu").removeClass("mega")
+                })
+                ))
+    } else {
+        $.each(array, function(i, elem) {
+            $('#mobile-menu').append('<li><a href="javascript:void(0)">'+elem+'</a></li>')
+        })
+       
     }
-    addColumn();
-    $(".selected-segment").length && $("#navigation-menu").addClass("selected-segment-active"),
-        $("#navigation-menu").length && (Modernizr.touch ? ($(".touch-header-link").removeClass("hidden"),
-            $(".segment").on("click", function (e) {
-                $(this).find(".mega-drop-down").length && ($(this).find(".mega-drop-down").hasClass("active") ? (($(e.target).hasClass("link-text") || $(e.target).hasClass("label")) && e.preventDefault(),
-                    i(this),
-                    l()) : (e.preventDefault(),
-                        l(),
-                        $(this).addClass("active"),
-                        c(this)))
-            })) : ($(".segment").on("mouseover", function () {
-                c(this)
-            }), $(".segment").on("mouseleave", function () {
-                $(".mega-drop-down").removeClass("active"),
-                    $("#navigation-menu").removeClass("mega")
-            })
-            ))
-
 }
