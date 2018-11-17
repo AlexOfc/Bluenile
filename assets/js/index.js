@@ -1,4 +1,4 @@
-// Variables and data
+// letiables and data
 let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria', 'Canada', 'China', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece'],
     selectElem = document.getElementById("shipping-country"),
     dopantArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'],
@@ -502,10 +502,23 @@ $(document).ready(function () {
     CreateTickedSlider($('.orientation-filter'), 0, orientationArray);
     CreateItems(itemsData, $('#all'));
     filterItems();
+    let defaulDiameter = $('.diameter-filter').find('select').children('option:selected').val(),
+        defaultType = [$('.type-filter').find('.slider').slider("values", 0), $('.type-filter').find('.slider').slider("values", 1)],
+        defaultGrade = [$('.grade-filter').find('.slider').slider("values", 0), $('.grade-filter').find('.slider').slider("values", 1)],
+        defaultPolish = [$('.polish-filter').find('.slider').slider("values", 0), $('.polish-filter').find('.slider').slider("values", 1)],
+        defaultDopant = [$('.dopant-filter').find('.slider').slider("values", 0), $('.dopant-filter').find('.slider').slider("values", 1)],
+        defaultOrientation = [$('.orientation-filter').find('.slider').slider("values", 0), $('.orientation-filter').find('.slider').slider("values", 1)],
+        defaultResistivity = [$('.res-filter').find('.slider').slider("values", 0), $('.res-filter').find('.slider').slider("values", 1)],
+        defaultThickness = $('.thickness-filter').find('select').children('option:selected').val();
     onchangeFunctions();
     hideFilters();
     keyUpFunctions();
     clickFunctions();
+    $('.reset-filters').on('click', function () {
+        resetFilter(defaulDiameter, defaultType, defaultGrade, defaultPolish, defaultDopant, defaultOrientation, defaultResistivity, defaultThickness);
+        filterItems()
+    });
+
     /*$('#all').DataTable({
         "initComplete": function () {
             filterItems();
@@ -537,9 +550,40 @@ $(document).ready(function () {
         `);
     });
 }*/
+function resetFilter(diameter, type, grade, polish, dopant, orientation, resistivity, thickness) {
+    $('.res-filter').find('.slider').slider("values", 0, resistivity[0]);
+    $('.res-filter').find('.slider').slider("values", 1, resistivity[1]);
+    $('.thickness-filter').find('select').val(thickness);
+    $('.dopant-filter').find('.slider').slider("values", 0, dopant[0]);
+    $('.dopant-filter').find('.slider').slider("values", 1, dopant[1]);
+    $('.orientation-filter').find('.slider').slider("values", 0, orientation[0]);
+    $('.orientation-filter').find('.slider').slider("values", 1, orientation[1]);
+    $('.polish-filter').find('.slider').slider("values", 0, polish[0]);
+    $('.polish-filter').find('.slider').slider("values", 1, polish[1]);
+    $('.grade-filter').find('.slider').slider("values", 0, grade[0]);
+    $('.grade-filter').find('.slider').slider("values", 1, grade[1]);
+    $('.type-filter').find('.slider').slider("values", 0, type[0]);
+    $('.type-filter').find('.slider').slider("values", 1, type[1]);
+    $('.polish-filter, .grade-filter, .dopant-filter, .orientation-filter, .thickness-filter, .res-filter').removeClass('toggled');
+    $('.polish-filter .toggle-button-space, .grade-filter .toggle-button-space, .dopant-filter .toggle-button-space, .orientation-filter .toggle-button-space, .thickness-filter .toggle-button-space, .res-filter .toggle-button-space').removeClass('toggled');
+    $('.diameter-filter').find('select').val(diameter);
+    let elements = [$('.res-filter'), $('.polish-filter'), $('.dopant-filter'), $('.grade-filter'), $('.type-filter')];
+    $.each(elements, function (i, element) {
+        $(element).find('.slider-value').each(function (i, el) {
+
+            if ($(el).attr('data-count') < $(element).find('.slider').slider("values", 0) || $(el).attr('data-count') > $(element).find('.slider').slider("values", 1)) {
+                $(el).addClass('unselected')
+            } else {
+                $(el).removeClass('unselected')
+            }
+        });
+    });
+
+
+}
 function CreateItems(object, item) {
     $.each(object, function (i, e) {
-        var count = i;
+        let count = i;
         $(item).find('.body-goods').append(`
         <tr class="body-item body_item_`+ i + `" data-id="` + e.id + `" data-grade="` + e.grade + `" data-polish="` + e.polish + `" data-diameter="` + e.diameter + `" data-type="` + e.type + `" data-dopant="` + e.dopant + `" data-orientation="` + e.orien + `" data-resmin="` + e.resMin + `" data-resmax="` + e.resMax + `" data-thickness="` + e.thick + `">
             <td class="body-good qty-des">
@@ -568,7 +612,7 @@ function CreateItems(object, item) {
                 `+ e.polish + `
             </td>
             <td class="body-good">
-                 `+ e.resMin + `-`+e.resMax+`
+                 `+ e.resMin + `-` + e.resMax + `
             </td>
             <td class="body-good">
                  `+ e.thick + `
@@ -740,7 +784,13 @@ function keyUpFunctions() {
     });
 }
 function onchangeFunctions() {
-    $('.diameter-filter, .thickness-filter').find('select').on('change', function () {
+    $('.diameter-filter').find('select').on('change', function () {
+        filterItems()
+    });
+    $('.thickness-filter').find('select').on('change', function () {
+
+        $('.thickness-filter').addClass('toggled');
+        $('.thickness-filter').find('.toggle-button-space').addClass('toggled')
         filterItems()
     });
 }
@@ -763,6 +813,7 @@ function clickFunctions() {
         $(this).parent().parent().parent().toggleClass('toggled');
         filterItems()
     });
+
 }
 function makeSelect(array, element) {
     let option;
@@ -779,7 +830,7 @@ function hideFilters() {
 function Menu(array) {
     "use strict";
     function c(e) {
-        var t = $(e).position().left
+        let t = $(e).position().left
             , n = $(e).find(".link-text").position().left + t
             , a = $(e).find(".link-text").width()
             , r = $(".navigation-bar").width()

@@ -297,6 +297,11 @@ h6, .h6 {
     background: #0024d6;
     color:white
 }
+.reset-filters {
+    font-size: 16px;
+    color:#0024d6;
+    cursor: pointer;
+}
 .mobile-toggle-menu {
     margin-left: 10px;
     display: none
