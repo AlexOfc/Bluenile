@@ -285,6 +285,22 @@ h6, .h6 {
     font-size: 24px;
     padding: 5px 8px 5px 0;
 }
+.mobile-button-menu {
+    color:#0024d6;
+    padding: 3px 6px;
+    border: 1px solid #0024d6;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+.mobile-button-menu:hover {
+    border: 1px solid #0024d6;
+    background: #0024d6;
+    color:white
+}
+.mobile-toggle-menu {
+    margin-left: 10px;
+    display: none
+}
 .navigation-bar {
     line-height: 19px;
     display: table;

@@ -8,7 +8,7 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
     diametersNames = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality'],
     resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035];
-    polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
+polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
     thicknessNames = ['280', '320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD'],
     diameterData = ['100mm', '0.5mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     itemsData = [
@@ -19,7 +19,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -42,7 +43,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -65,7 +67,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -88,7 +91,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'P',
             dopant: 'S',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'SAW',
             polish: 'E/E',
@@ -111,7 +115,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'SAW',
             polish: 'E/E',
@@ -134,7 +139,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -157,7 +163,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -180,7 +187,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -203,7 +211,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -226,7 +235,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'P',
             dopant: 'S',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'SAW',
             polish: 'E/E',
@@ -249,7 +259,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'SAW',
             polish: 'E/E',
@@ -272,7 +283,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -295,7 +307,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -318,7 +331,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'P',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -341,7 +355,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'N',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -364,7 +379,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'P',
             dopant: 'S',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'SAW',
             polish: 'E/E',
@@ -387,7 +403,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'N',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'SAW',
             polish: 'E/E',
@@ -410,7 +427,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'ANY',
             dopant: 'Undoped',
             orien: '<111>',
-            res: '50',
+            resMin: '1',
+            resMax: '50',
             thick: '280',
             grade: 'MECH',
             polish: 'E/E',
@@ -486,7 +504,7 @@ $(document).ready(function () {
     filterItems();
     onchangeFunctions();
     hideFilters();
-    keyUpFunctions ();
+    keyUpFunctions();
     clickFunctions();
     /*$('#all').DataTable({
         "initComplete": function () {
@@ -519,83 +537,83 @@ $(document).ready(function () {
         `);
     });
 }*/
-function CreateItems (object, item) {
-    $.each(object, function(i, e){
+function CreateItems(object, item) {
+    $.each(object, function (i, e) {
         var count = i;
         $(item).find('.body-goods').append(`
-        <tr class="body-item body_item_`+i+`" data-id="`+e.id+`" data-grade="`+e.grade+`" data-polish="`+e.polish+`" data-diameter="`+e.diameter+`" data-type="`+e.type+`" data-dopant="`+e.dopant+`" data-orientation="`+e.orien+`" data-res="`+e.res+`" data-thickness="`+e.thick+`">
+        <tr class="body-item body_item_`+ i + `" data-id="` + e.id + `" data-grade="` + e.grade + `" data-polish="` + e.polish + `" data-diameter="` + e.diameter + `" data-type="` + e.type + `" data-dopant="` + e.dopant + `" data-orientation="` + e.orien + `" data-resmin="` + e.resMin + `" data-resmax="` + e.resMax + `" data-thickness="` + e.thick + `">
             <td class="body-good qty-des">
                 <select name="qty"></select>
                 <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
             </td>
             <td class="body-good">
-                 `+e.id+`
+                 `+ e.id + `
             </td>
             <td class="body-good">
-                 `+e.diameter+`
+                 `+ e.diameter + `
             </td>
             <td class="body-good">
-                 `+e.type+`
+                 `+ e.type + `
             </td>
             <td class="body-good">
-                 `+e.dopant+`
+                 `+ e.dopant + `
             </td>
             <td class="body-good">
-                 `+e.orien+`
+                 `+ e.orien + `
             </td>
             <td class="body-good">
-                 `+e.grade+`
+                 `+ e.grade + `
             </td>
             <td class="body-good">
-                `+e.polish+`
-        </td>
-            <td class="body-good">
-                 `+e.res+`
+                `+ e.polish + `
             </td>
             <td class="body-good">
-                 `+e.thick+`
+                 `+ e.resMin + `-`+e.resMax+`
             </td>
             <td class="body-good">
-                 `+e.leadTime+`
+                 `+ e.thick + `
             </td>
             <td class="body-good">
-                 `+e.quantity+`
+                 `+ e.leadTime + `
             </td>
             <td class="body-good">
-             `+e.one_unit_price+`
+                 `+ e.quantity + `
             </td>
             <td class="body-good">
-             `+e.five_unit_price+`
+                `+ e.one_unit_price + `
             </td>
             <td class="body-good">
-                 `+e.ten_unit_price+`
+                 `+ e.five_unit_price + `
             </td>
             <td class="body-good">
-                `+e.twfive_unit_price+`
+                 `+ e.ten_unit_price + `
             </td>
             <td class="body-good">
-             `+e.fifty_unit_price+`
+                `+ e.twfive_unit_price + `
             </td>
             <td class="body-good">
-             `+e.hand_unit_price+`
+                `+ e.fifty_unit_price + `
             </td>
             <td class="body-good">
-                `+e.twohand_unit_price+`
+                 `+ e.hand_unit_price + `
             </td>
             <td class="body-good">
-                 `+e.fivehand_unit_price+`
+                `+ e.twohand_unit_price + `
             </td>
             <td class="body-good">
-             `+e.description+`
+                 `+ e.fivehand_unit_price + `
+            </td>
+            <td class="body-good">
+                `+ e.description + `
             </td>
         </tr>
         `);
-        $.each(e.qty, function(key, val) {
-            $('.body_item_'+count).find('select').append('<option value="'+val+'">'+val+'</option>')
+        $.each(e.qty, function (key, val) {
+            $('.body_item_' + count).find('select').append('<option value="' + val + '">' + val + '</option>')
         });
     });
 }
-function filterItems () {
+function filterItems() {
     let TYPE_VALUES = [],
         GRADE_VALUES = [],
         POLISH_VALUES = [],
@@ -603,38 +621,37 @@ function filterItems () {
         ORIENTATION_VALUES = [],
         DIAMETER_VALUE = $('.diameter-filter').find('select').children('option:selected').val(),
         THICKNESS_VALUE = $('.thickness-filter').find('select').children('option:selected').val(),
-        RESISTIVITY_VALUES = [$('.res-filter').find('.slider').slider("values", 0) , $('.res-filter').find('.slider').slider("values", 1)];
+        RESISTIVITY_VALUES = [$('.res-filter').find('.slider').slider("values", 0), $('.res-filter').find('.slider').slider("values", 1)];
 
 
-    $('.type-filter').find('.slider-value:not(.unselected)').each(function(i, elem){
+    $('.type-filter').find('.slider-value:not(.unselected)').each(function (i, elem) {
         TYPE_VALUES.push($(elem).text())
     });
-    $('.grade-filter').find('.slider-value:not(.unselected)').each(function(i, elem){
+    $('.grade-filter').find('.slider-value:not(.unselected)').each(function (i, elem) {
         GRADE_VALUES.push($(elem).text())
     });
-    $('.polish-filter.toggled').find('.slider-value:not(.unselected)').each(function(i, elem){
+    $('.polish-filter.toggled').find('.slider-value:not(.unselected)').each(function (i, elem) {
         POLISH_VALUES.push($(elem).text())
     });
-    $('.dopant-filter.toggled').find('.slider-value:not(.unselected)').each(function(i, elem){
+    $('.dopant-filter.toggled').find('.slider-value:not(.unselected)').each(function (i, elem) {
         DOPANT_VALUES.push($(elem).text())
     });
-    $('.orientation-filter.toggled').find('.slider-value:not(.unselected)').each(function(i, elem){
+    $('.orientation-filter.toggled').find('.slider-value:not(.unselected)').each(function (i, elem) {
         ORIENTATION_VALUES.push($(elem).text())
     });
-    console.log(DIAMETER_VALUE)
-    $('.body-item').each(function(i, elem){
+    $('.body-item').each(function (i, elem) {
         if (!TYPE_VALUES.includes($(elem).attr('data-type')) ||
             !GRADE_VALUES.includes($(elem).attr('data-grade')) ||
             (!POLISH_VALUES.includes($(elem).attr('data-polish')) && $('.polish-filter').hasClass('toggled')) ||
             (!DOPANT_VALUES.includes($(elem).attr('data-dopant')) && $('.dopant-filter').hasClass('toggled')) ||
-            (!ORIENTATION_VALUES.includes($(elem).attr('data-orientation'))  && $('.orientation-filter').hasClass('toggled')) ||
+            (!ORIENTATION_VALUES.includes($(elem).attr('data-orientation')) && $('.orientation-filter').hasClass('toggled')) ||
             $(elem).attr('data-diameter') !== DIAMETER_VALUE ||
             ($(elem).attr('data-thickness') !== THICKNESS_VALUE && $('.thickness-filter').hasClass('toggled')) ||
-            (($(elem).attr('data-res') < RESISTIVITY_VALUES[0] || $(elem).attr('data-res') > RESISTIVITY_VALUES[1]) && $('.res-filter').hasClass('toggled'))) {
-                $(elem).hide()
-            } else {
-                $(elem).show()
-            }
+            (($(elem).attr('data-resmin') < RESISTIVITY_VALUES[0] || $(elem).attr('data-resmax') > RESISTIVITY_VALUES[1]) && $('.res-filter').hasClass('toggled'))) {
+            $(elem).hide()
+        } else {
+            $(elem).show()
+        }
     });
 }
 function CreateSlider(element, minimum, maximum, txt) {
@@ -650,9 +667,9 @@ function CreateSlider(element, minimum, maximum, txt) {
             $(element).find('.range').text('(' + txt + ui.values[0] + ' - ' + txt + ui.values[1] + ')');
             if ($(element).hasClass('filter-toggling')) {
                 $(element).addClass('toggled');
-                 $(element).find('.toggle-button-space').addClass('toggled')
+                $(element).find('.toggle-button-space').addClass('toggled')
             }
-            filterItems ();
+            filterItems();
         }
     });
     $(element).find('.minValue').val(txt + $(element).find('.slider').slider("values", 0));
@@ -661,7 +678,7 @@ function CreateSlider(element, minimum, maximum, txt) {
 }
 function CreateDropdownFilter(element, array) {
     $.each(array, function (i, e) {
-        $(element).find('.dropdown-selector').append('<option value="'+ e + '">' + e + '</div>');
+        $(element).find('.dropdown-selector').append('<option value="' + e + '">' + e + '</div>');
     });
 
 }
@@ -693,9 +710,9 @@ function CreateTickedSlider(element, minimum, array) {
                 });
                 if ($(element).hasClass('filter-toggling')) {
                     $(element).addClass('toggled');
-                     $(element).find('.toggle-button-space').addClass('toggled')
+                    $(element).find('.toggle-button-space').addClass('toggled')
                 }
-                filterItems ()
+                filterItems()
             }
         }
     });
@@ -714,25 +731,25 @@ function CreateTickedSlider(element, minimum, array) {
     });
 
 }
-function keyUpFunctions () {
-    $(".minValue").change(function() {
-        $(this).parent().next().slider('values',0,$(this).val());
+function keyUpFunctions() {
+    $(".minValue").change(function () {
+        $(this).parent().next().slider('values', 0, $(this).val());
     });
-    $(".maxValue").change(function() {
-        $(this).parent().next().slider('values',1,$(this).val());
+    $(".maxValue").change(function () {
+        $(this).parent().next().slider('values', 1, $(this).val());
     });
 }
 function onchangeFunctions() {
-    $('.diameter-filter, .thickness-filter').find('select').on('change', function(){
-        filterItems ()
+    $('.diameter-filter, .thickness-filter').find('select').on('change', function () {
+        filterItems()
     });
 }
 function clickFunctions() {
-    $('.slider-value').on('click', function(){
-            $(this).parent().next().slider('values',0, $(this).attr('data-count'))
-      
+    $('.slider-value').on('click', function () {
+        $(this).parent().next().slider('values', 0, $(this).attr('data-count'))
+
     });
-    $('.all-filters span').on('click', function() {
+    $('.all-filters span').on('click', function () {
         $('.filters-body').children('.filter-container:gt(2)').slideToggle(350);
         $(this).toggleClass('shown');
         if ($(this).hasClass('shown')) {
@@ -741,10 +758,10 @@ function clickFunctions() {
             $(this).html('More filters <i class="fa fa-angle-down"></i>')
         }
     });
-    $('.toggle-button-space').on('click', function(){
+    $('.toggle-button-space').on('click', function () {
         $(this).toggleClass('toggled');
         $(this).parent().parent().parent().toggleClass('toggled');
-        filterItems ()
+        filterItems()
     });
 }
 function makeSelect(array, element) {
@@ -791,13 +808,13 @@ function Menu(array) {
         });
 
     }
-    for(i=1; i<= array.length; i++) {
+    for (i = 1; i <= array.length; i++) {
         if (i == 1) {
             $('.menu-table').append('<div class="column"><ul></ul></div>');
         } else if (i % 16 === 0) {
             $('.menu-table').append('<div class="column"><ul></ul></div>');
         } else {
-            $('.menu-table .column').last().append('<li><a href="javascript:void(0)">'+array[i-1]+'</a></li>')
+            $('.menu-table .column').last().append('<li><a href="javascript:void(0)">' + array[i - 1] + '</a></li>')
         }
         if (i == array.length) {
             $('.menu-table .column').last().remove()
@@ -817,8 +834,8 @@ function Menu(array) {
                 c(this)
             }), $(".segment").on("mouseleave", function () {
                 $(".mega-drop-down").removeClass("active"),
-                $("#navigation-menu").removeClass("mega")
-                })
+                    $("#navigation-menu").removeClass("mega")
+            })
             ))
 
 }
