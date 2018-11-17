@@ -5,16 +5,15 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
     langElem = document.getElementById("lang-section"),
     currencyElem = document.getElementById("cur-section"),
     countryElem = document.getElementById("shipping-country"),
-    dopantArray = ['ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'],
+    dopantArray = ['--Please select dopant', 'ANY', 'As', 'B', 'Ga', 'Intrinsic', 'N/A', 'Nitrogen', 'P', 'S', 'Sb', 'Si', 'Te', 'Undoped', 'Zn', 'N', 'Fe', 'Mg'],
     typeArray = ['P', 'N', 'ANY', 'Undoped'],
     orientationArray = ['<0001>', '<100>', '<110>', '<111>', 'ANY', 'N/A', '<510>', '<112>', '<113>', '<557>', '<111B>', '<111A>', '<1-102>', 'ST-cut', 'X-cut', 'Y-cut', 'Y-X-cut', 'Z-cut', 'AT-cut', '<11-20>', '<111-4°>', '<111-3°>'],
     shapesNames = ['Silicon', 'Fused Silica', 'Borofloat /Pyrex', 'Germanium', 'Gallium Arsenide', 'Intrinsic', 'Sapphire', 'InP', 'GaP', 'GaN', 'Thin Silicon', 'Thermal Oxide', 'Thermal Oxide', 'Nitride On Silicon', 'Silicon Carbide Wafers', 'ZnSe', 'Diced Silicon', 'GaN on Sapphire', 'Silicon on Insulator (SOI) wafers', 'Glass Wafers', 'CaF2', 'GaSb', 'YSZ', 'Soda Lime', 'BK7 Glass', 'D263 Glass', 'Soda lime Glass', 'Gorilla Glass', 'Borofloat 33 Glass', 'InAs', 'SI on Sapphire', 'ZnO', 'InSb', 'Solar', 'Single Crystal Quartz', 'Corning Eagle Glass', 'Polysilicon', 'Graphene', 'ITO glass', 'Free Standing GaN', 'InGaAs EPI on InP', 'MgF2', 'Aluminum', 'Undoped/Intrinsic Silicon', 'LiNbO3', 'Silicon EPI', 'LiTaO3', 'AlGaN/GaN-on-Sapphire'],
-    diametersNames = ['0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
+    diametersNames = ['--Please select diameter', '0.5mm', '100mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     gradeArray = ['Test', 'Prime', 'MECH', 'SEMI Prime', 'Solar Wafers', 'SAW', 'Optical', 'EPI/MECH', 'Dummy', 'Bad Quality'],
     resgradeArray = [0, 0.5, 0.01, 75, 0.015, 0.005, 5, 3, 2, 0.035],
     polishArray = ['DSP', 'E/E', 'HI REF', 'L/L', 'SSP', 'C/C', 'SSP;PSS'],
     thicknessNames = ['280', '320-350', '280  um', '300-350um', '525 um', '485 - 535 um', '850-900um', '650um', 'N/A', '0.5+/- 0.03mm', 'Not legible', '10um?', '500um (?)', 'Illegible', 'STD'],
-    diameterData = ['100mm', '0.5mm', '10mm', '123', '125mm', '125x125mm', '150mm', '200mm', '25.4mm', '25mm', '300mm', '450mm', '48mm', '5.5mm', '50.8mm', '5mm', '76.2mm', 'rect', 'Square', '25mm X 25mm', '156 x 156 mm', 'Unknown', 'Pr-A', 'Pr A', 'testtt', '10.0mm×10.5mm', 'Rectangle', '20mm', '15mm', '50mm', '12.7mm', '15mmX15mm', '20mmX20mm', '100x100mm', '10mmX10mm', '5mmX5mm', '34mm', 'Broken'],
     itemsData = [
         {
             id: 1,
@@ -457,8 +456,8 @@ $(document).ready(function () {
     makeSelect(lang_list, langElem);
     Menu(shapesNames);
     CreateSlider($('.res-filter'), 0, 75, '');
-    CreateDropdownFilter($('.diameter-filter'), diameterData);
-    CreateTickedSlider($('.dopant-filter'), 0, dopantArray);
+    CreateDropdownFilter($('.diameter-filter'), diametersNames);
+    CreateDropdownFilter($('.dopant-filter'), dopantArray);
     CreateTickedSlider($('.grade-filter'), 0, gradeArray);
     CreateTickedSlider($('.polish-filter'), 0, polishArray);
     CreateDropdownFilter($('.thickness-filter'), thicknessNames);
@@ -470,7 +469,7 @@ $(document).ready(function () {
         defaultType = [$('.type-filter').find('.slider').slider("values", 0), $('.type-filter').find('.slider').slider("values", 1)],
         defaultGrade = [$('.grade-filter').find('.slider').slider("values", 0), $('.grade-filter').find('.slider').slider("values", 1)],
         defaultPolish = [$('.polish-filter').find('.slider').slider("values", 0), $('.polish-filter').find('.slider').slider("values", 1)],
-        defaultDopant = [$('.dopant-filter').find('.slider').slider("values", 0), $('.dopant-filter').find('.slider').slider("values", 1)],
+        defaultDopant = $('.dopant-filter').find('select').children('option:selected').val(),
         defaultOrientation = [$('.orientation-filter').find('.slider').slider("values", 0), $('.orientation-filter').find('.slider').slider("values", 1)],
         defaultResistivity = [$('.res-filter').find('.slider').slider("values", 0), $('.res-filter').find('.slider').slider("values", 1)],
         defaultThickness = $('.thickness-filter').find('select').children('option:selected').val();
@@ -509,8 +508,7 @@ function resetFilter(diameter, type, grade, polish, dopant, orientation, resisti
     $('.res-filter').find('.slider').slider("values", 0, resistivity[0]);
     $('.res-filter').find('.slider').slider("values", 1, resistivity[1]);
     $('.thickness-filter').find('select').val(thickness);
-    $('.dopant-filter').find('.slider').slider("values", 0, dopant[0]);
-    $('.dopant-filter').find('.slider').slider("values", 1, dopant[1]);
+    $('.dopant-filter').find('select').slider(dopant);
     $('.orientation-filter').find('.slider').slider("values", 0, orientation[0]);
     $('.orientation-filter').find('.slider').slider("values", 1, orientation[1]);
     $('.polish-filter').find('.slider').slider("values", 0, polish[0]);
@@ -522,7 +520,7 @@ function resetFilter(diameter, type, grade, polish, dopant, orientation, resisti
     $('.polish-filter, .grade-filter, .dopant-filter, .orientation-filter, .thickness-filter, .res-filter').removeClass('toggled');
     $('.polish-filter .toggle-button-space, .grade-filter .toggle-button-space, .dopant-filter .toggle-button-space, .orientation-filter .toggle-button-space, .thickness-filter .toggle-button-space, .res-filter .toggle-button-space').removeClass('toggled');
     $('.diameter-filter').find('select').val(diameter);
-    let elements = [$('.res-filter'), $('.polish-filter'), $('.dopant-filter'), $('.grade-filter'), $('.type-filter')];
+    let elements = [$('.res-filter'), $('.polish-filter'), $('.grade-filter'), $('.type-filter')];
     $.each(elements, function (i, element) {
         $(element).find('.slider-value').each(function (i, el) {
 
@@ -616,12 +614,11 @@ function filterItems() {
     let TYPE_VALUES = [],
         GRADE_VALUES = [],
         POLISH_VALUES = [],
-        DOPANT_VALUES = [],
+        DOPANT_VALUES = $('.dopant-filter').find('select').children('option:selected').val(),
         ORIENTATION_VALUES = [],
         DIAMETER_VALUE = $('.diameter-filter').find('select').children('option:selected').val(),
         THICKNESS_VALUE = $('.thickness-filter').find('select').children('option:selected').val(),
         RESISTIVITY_VALUES = [$('.res-filter').find('.slider').slider("values", 0), $('.res-filter').find('.slider').slider("values", 1)];
-
 
     $('.type-filter').find('.slider-value:not(.unselected)').each(function (i, elem) {
         TYPE_VALUES.push($(elem).text())
@@ -642,9 +639,9 @@ function filterItems() {
         if (!TYPE_VALUES.includes($(elem).attr('data-type')) ||
             !GRADE_VALUES.includes($(elem).attr('data-grade')) ||
             (!POLISH_VALUES.includes($(elem).attr('data-polish')) && $('.polish-filter').hasClass('toggled')) ||
-            (!DOPANT_VALUES.includes($(elem).attr('data-dopant')) && $('.dopant-filter').hasClass('toggled')) ||
+            ($(elem).attr('data-dopant') !== DOPANT_VALUES && DOPANT_VALUES !== dopantArray[0] && $('.dopant-filter').hasClass('toggled')) ||
             (!ORIENTATION_VALUES.includes($(elem).attr('data-orientation')) && $('.orientation-filter').hasClass('toggled')) ||
-            $(elem).attr('data-diameter') !== DIAMETER_VALUE ||
+            ($(elem).attr('data-diameter') !== DIAMETER_VALUE && DIAMETER_VALUE !== diametersNames[0])||
             ($(elem).attr('data-thickness') !== THICKNESS_VALUE && $('.thickness-filter').hasClass('toggled')) ||
             (($(elem).attr('data-resmin') < RESISTIVITY_VALUES[0] || $(elem).attr('data-resmax') > RESISTIVITY_VALUES[1]) && $('.res-filter').hasClass('toggled'))) {
             $(elem).hide()
@@ -746,6 +743,12 @@ function onchangeFunctions() {
 
         $('.thickness-filter').addClass('toggled');
         $('.thickness-filter').find('.toggle-button-space').addClass('toggled')
+        filterItems()
+    });
+    $('.dopant-filter').find('select').on('change', function () {
+
+        $('.dopant-filter').addClass('toggled');
+        $('.dopant-filter').find('.toggle-button-space').addClass('toggled')
         filterItems()
     });
 }
