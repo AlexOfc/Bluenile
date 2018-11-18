@@ -1374,6 +1374,10 @@ table.dataTable.no-footer {
     padding: 5px!important;
     text-align: center;
     vertical-align: middle;
+    white-space: nowrap;
+}
+.add-to-cart {
+    display: block
 }
 .add-to-cart i {
     font-size: 20px;
