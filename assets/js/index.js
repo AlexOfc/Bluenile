@@ -583,11 +583,12 @@ function CreateItems(object, item) {
                 `+ e.polish + `
             </td>
             <td class="body-good">
-                 `+ e.resMin + `-` + e.resMax + `
-            </td>
-            <td class="body-good">
                  `+ e.resistivity +`
             </td>
+            <td class="body-good">
+                 `+ e.resMin + `-` + e.resMax + `
+            </td>
+            
             <td class="body-good">
                  `+ e.thick + `
             </td>
