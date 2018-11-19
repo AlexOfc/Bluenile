@@ -849,15 +849,16 @@ function Menu(array) {
             });
     
         }
+        console.log(array)
         for (i = 1; i <= array.length; i++) {
             if (i == 1) {
                 $('.menu-table').append('<div class="column"><ul></ul></div>');
             } else if (i % 16 === 0) {
                 $('.menu-table').append('<div class="column"><ul></ul></div>');
             } else {
-                $('.menu-table .column').last().append('<li><a href="javascript:void(0)">' + array[i - 1] + '</a></li>')
+                $('.menu-table .column ul').last().append('<li><a href="javascript:void(0)">' + array[i - 1] + '</a></li>')
             }
-            if (i == array.length) {
+            if (i == array.length && $('.menu-table .column').last().children('ul').children().length == 0) {
                 $('.menu-table .column').last().remove()
             }
         }
