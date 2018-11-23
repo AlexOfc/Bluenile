@@ -72,8 +72,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            resMin: '1',
-            resMax: '50',
+            resMin: '10',
+            resMax: '20',
             resistivity: '25',
             thick: '280',
             grade: 'MECH',
@@ -97,8 +97,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'P',
             dopant: 'S',
             orien: '<111>',
-            resMin: '1',
-            resMax: '50',
+            resMin: '5',
+            resMax: '30',
             resistivity: '25',
             thick: '280',
             grade: 'SAW',
@@ -172,8 +172,8 @@ let country_list = ['APO/FPO (US)', 'Australia', 'Austria', 'Belgium', 'Bulgaria
             type: 'Undoped',
             dopant: 'Undoped',
             orien: '<111>',
-            resMin: '1',
-            resMax: '50',
+            resMin: '>5000',
+            resMax: '0',
             resistivity: '25',
             thick: '280',
             grade: 'MECH',
@@ -495,6 +495,17 @@ $(document).ready(function () {
     hideFilters();
     keyUpFunctions();
     clickFunctions();
+    
+    // $('.heh').sort(function (a, b) {
+    //     //console.log($(a))
+    //     //console.log($(b))
+    //     var contentA =parseInt( $(a).attr('data-sort'));
+    //     var contentB =parseInt( $(b).attr('data-sort'));
+    //     if (contentA < contentB) {
+
+    //     }
+    //     //console.log( (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0);
+    //  });
     $('.reset-filters').on('click', function () {
         resetFilter(defaulDiameter, defaultType, defaultGrade, defaultPolish, defaultDopant, defaultOrientation, defaultResistivity, defaultThickness);
         filterItems()
@@ -556,74 +567,55 @@ function CreateItems(object, item) {
     $.each(object, function (i, e) {
         let count = i;
         $(item).find('.body-goods').append(`
-        <tr class="body-item body_item_`+ i + `" data-id="` + e.id + `" data-grade="` + e.grade + `" data-polish="` + e.polish + `" data-diameter="` + e.diameter + `" data-type="` + e.type + `" data-dopant="` + e.dopant + `" data-orientation="` + e.orien + `" data-resmin="` + e.resMin + `" data-resmax="` + e.resMax + `" data-thickness="` + e.thick + `">
+        <tr class="body-item body_item_`+ i + `" 
+        data-id="` + e.id + `" 
+        data-grade="` + e.grade + `" 
+        data-polish="` + e.polish + `" 
+        data-diameter="` + e.diameter + `" 
+        data-type="` + e.type + `" 
+        data-dopant="` + e.dopant + `" 
+        data-orientation="` + e.orien + `" 
+        data-resmin="` + e.resMin + `" 
+        data-resmax="` + e.resMax + `" 
+        data-thickness="` + e.thick + `" 
+        data-lead="`+e.leadTime+`">
             <td class="body-good qty-des">
                 <select name="qty"></select>
                 <a href="javascript:void(0)" class="add-to-cart"><i class="fa fa-cart-arrow-down"></i></a>
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.id+`" data-parameter="id">
                  `+ e.id + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.diameter+`" data-parameter="diameter">
                  `+ e.diameter + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.type+`" data-parameter="type">
                  `+ e.type + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.dopant+`" data-parameter="dopant">
                  `+ e.dopant + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.orien+`" data-parameter="orientation">
                  `+ e.orien + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.grade+`" data-parameter="grade">
                  `+ e.grade + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.polish+`" data-parameter="polish">
                 `+ e.polish + `
             </td>
-            <td class="body-good">
-                 `+ e.resistivity +`
-            </td>
-            <td class="body-good">
+            <td class="body-good" data-info-resmin="`+e.resMin+`" data-info-resmax="`+e.resMax+`" data-parameter="resistivity">
                  `+ e.resMin + `-` + e.resMax + `
             </td>
             
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.thick+`" data-parameter="thickness">
                  `+ e.thick + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.leadTime+`" data-parameter="lead">
                  `+ e.leadTime + `
             </td>
-            <td class="body-good">
+            <td class="body-good" data-info="`+e.quantity+`" data-parameter="quantity">
                  `+ e.quantity + `
-            </td>
-            <td class="body-good">
-                `+ e.one_unit_price + `
-            </td>
-            <td class="body-good">
-                 `+ e.five_unit_price + `
-            </td>
-            <td class="body-good">
-                 `+ e.ten_unit_price + `
-            </td>
-            <td class="body-good">
-                `+ e.twfive_unit_price + `
-            </td>
-            <td class="body-good">
-                `+ e.fifty_unit_price + `
-            </td>
-            <td class="body-good">
-                 `+ e.hand_unit_price + `
-            </td>
-            <td class="body-good">
-                `+ e.twohand_unit_price + `
-            </td>
-            <td class="body-good">
-                 `+ e.fivehand_unit_price + `
-            </td>
-            <td class="body-good">
-                `+ e.description + `
             </td>
         </tr>
         `);
@@ -666,11 +658,13 @@ function filterItems() {
             ($(elem).attr('data-diameter') !== DIAMETER_VALUE && DIAMETER_VALUE !== diametersNames[0])||
             ($(elem).attr('data-thickness') !== THICKNESS_VALUE && $('.thickness-filter').hasClass('toggled')) ||
             (($(elem).attr('data-resmin') < RESISTIVITY_VALUES[0] || $(elem).attr('data-resmax') > RESISTIVITY_VALUES[1]) && $('.res-filter').hasClass('toggled'))) {
-            $(elem).hide()
+            $(elem).removeClass('not-removed').hide()
         } else {
-            $(elem).show()
+            $(elem).addClass('not-removed').show()
         }
     });
+    console.log($('#all-tab'))
+    document.getElementById('all-tab').innerText = 'All Wafers ('+$('#all .body-item.not-removed').length + ')';
 }
 function CreateSlider(element, minimum, maximum, txt) {
     $(element).find('.slider').slider({
@@ -749,6 +743,96 @@ function CreateTickedSlider(element, minimum, array) {
     });
 
 }
+function sortingItems(parameter, direction) {
+    
+    let hegArray = [];
+   
+    if (parameter == 'id' || parameter == 'diameter' || parameter == 'quantity' || parameter == 'thickness') {
+        $('.body-item').each(function(i, e) {
+            hegArray.push($(this).find('.body-good[data-parameter="'+parameter+'"]').attr('data-info'))
+        });
+        if (direction == 'asc') {
+            hegArray.sort((a, b) => {
+                a = Number(a.replace('mm', ''));
+                b = Number(b.replace('mm', ''))
+                return (a - b)
+            })
+        } else {
+            hegArray.sort((a, b) => {
+                a = Number(a.replace('mm', ''));
+                b = Number(b.replace('mm', ''))
+                return (b - a)
+            })
+        }
+    } else if (parameter == 'resistivity'){
+        $('.body-item').each(function(i, e) {
+            hegArray.push($(this).find('.body-good[data-parameter="'+parameter+'"]').attr('data-info-resmin') + '-' +$(this).find('.body-good[data-parameter="'+parameter+'"]').attr('data-info-resmax'))
+        }); 
+        if (direction == 'asc') {
+            $.each(hegArray, function(i, elem){
+                elem.replace('-', ' ').replace('>', ' ').replace('<', ' ').split(' ');
+                elem = {
+                    min: Number(elem[0]),
+                    max: Number(elem[1])
+                }
+            })
+            console.log(hegArray)
+            hegArray.sort((a, b) => {
+                a = a.replace('-', ' ').replace('>', ' ').replace('<', ' ').split(' ');
+                a = {
+                    min: Number(a[0]),
+                    max: Number(a[1])
+                }
+                b = b.replace('-', ' ').replace('>', ' ').replace('<', ' ').split(' ');
+                b = {
+                    min: Number(b[0]),
+                    max: Number(b[1])
+                }
+                if (a.min < b.min && a.max < b.max){
+                    
+                    return (a - b)
+                } else if (a.min < b.min && a.max > b.max) {
+
+                    return (a - b)
+                } else if (a.min > b.min && a.max < b.max){
+                    return (b - a)
+                } else if (a.min > b.min && a.max > b.max){
+                    return (b - a)
+                } else {
+                    return (a - b)
+                }
+            })
+        } else {
+            hegArray.sort((a, b) => {
+                a = a.replace('-', ' ').replace('>', ' ').replace('<', ' ').split(' ');
+                a = {
+                    min: Number(a[0]),
+                    max: Number(a[1])
+                }
+                b = b.replace('-', ' ').replace('>', ' ').replace('<', ' ').split(' ');
+                b = {
+                    min: Number(b[0]),
+                    max: Number(b[1])
+                }
+                if (a.min > b.min && a.max > b.max){
+                    return (a - b)
+                } else if (a.min > b.min && a.max < b.max) {
+                    return (a - b)
+                } else if (a.min < b.min && a.max < b.max){
+                    return (b - a)
+                } else if (a.min < b.min && a.max < b.max){
+                    return (b - a)
+                } else {
+                    return (b - a)
+                }
+            })
+        }
+    }
+   
+    $.each(hegArray, function(i, elem){
+        $('.heh[data-sort="'+elem+'"').appendTo('.lul')
+    })
+}
 function keyUpFunctions() {
     $(".minValue").change(function () {
         $(this).parent().next().slider('values', 0, $(this).val());
@@ -773,6 +857,19 @@ function onchangeFunctions() {
         $('.dopant-filter').find('.toggle-button-space').addClass('toggled')
         filterItems()
     });
+    $('.header-cell').on('click', function(){
+        if ($(this).hasClass('asc')) {
+            $('.header-cell').removeClass('asc');
+            $(this).addClass('desc')
+            sortingItems($(this).attr('data-parameter'), 'desc')
+        } else {
+            $('.header-cell').removeClass('asc').removeClass('desc');
+            $(this).addClass('asc');
+            sortingItems($(this).attr('data-parameter'), 'asc')
+        }
+        
+        
+    })
 }
 function clickFunctions() {
     $('.slider-value').on('click', function () {
@@ -798,6 +895,7 @@ function clickFunctions() {
         $('.country-block').toggleClass('show')
     });
     $('.mobile-button-menu').on('click', function() {
+        $(this).toggleClass('toggle');
         $('.extra-wide-layout, .mobile-menu-toggling').toggleClass('moving');
     });
     $('.open-mobile-cats').on('click', function(){
@@ -850,13 +948,14 @@ function Menu(array) {
     
         }
         console.log(array)
-        for (i = 1; i <= array.length; i++) {
+        for (i = 0; i <= array.length; i++) {
             if (i == 1) {
                 $('.menu-table').append('<div class="column"><ul></ul></div>');
+                 $('.menu-table .column ul').last().append('<li><a href="javascript:void(0)">' + array[i] + '</a></li>')
             } else if (i % 16 === 0) {
                 $('.menu-table').append('<div class="column"><ul></ul></div>');
-            } else {
-                $('.menu-table .column ul').last().append('<li><a href="javascript:void(0)">' + array[i - 1] + '</a></li>')
+            } else if (typeof(array[i]) !== 'undefined') {
+                $('.menu-table .column ul').last().append('<li><a href="javascript:void(0)">' + array[i] + '</a></li>')
             }
             if (i == array.length && $('.menu-table .column').last().children('ul').children().length == 0) {
                 $('.menu-table .column').last().remove()
